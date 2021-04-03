@@ -55,8 +55,18 @@ public class LoginPage extends javax.swing.JFrame {
         });
 
         employeeButton.setText("Employee");
+        employeeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employeeButtonActionPerformed(evt);
+            }
+        });
 
         managerButton.setText("Manager");
+        managerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                managerButtonActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Sign In");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +134,8 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
         // TODO add your handling code here:
+        employeeButton.setSelected(false);
+        managerButton.setSelected(false);
     }//GEN-LAST:event_adminButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -142,7 +154,9 @@ public class LoginPage extends javax.swing.JFrame {
     }
     else if(managerButton.isSelected())
     {
-        
+        ManagerFrame form = new ManagerFrame();
+        this.setVisible(false);
+        form.setVisible(true);
     }
     else
     {
@@ -155,6 +169,18 @@ public class LoginPage extends javax.swing.JFrame {
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void employeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeButtonActionPerformed
+        // TODO add your handling code here:
+        adminButton.setSelected(false);
+        managerButton.setSelected(false);
+    }//GEN-LAST:event_employeeButtonActionPerformed
+
+    private void managerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerButtonActionPerformed
+        // TODO add your handling code here:
+        adminButton.setSelected(false);
+        employeeButton.setSelected(false);
+    }//GEN-LAST:event_managerButtonActionPerformed
 
     /**
      * @param args the command line arguments
