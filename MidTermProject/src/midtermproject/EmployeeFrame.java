@@ -105,7 +105,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jButton6.setText("Remove");
 
-        jButton7.setText("Remove");
+        jButton7.setText("Remove All");
 
         jButton8.setText("Request");
 
