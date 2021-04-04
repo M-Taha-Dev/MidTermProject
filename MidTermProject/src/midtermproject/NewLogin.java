@@ -48,9 +48,9 @@ public class NewLogin extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -120,13 +120,13 @@ public class NewLogin extends javax.swing.JDialog {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("PASSWORD");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 160, 50));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 280, 30));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("USERNAME");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, 160, 50));
         jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 190, 280, 30));
+        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 280, 30));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\f2c98e653eb9264bcbd83167f0be9c05.jpg")); // NOI18N
@@ -244,7 +244,7 @@ public class NewLogin extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JButton managerButton;
     // End of variables declaration//GEN-END:variables
