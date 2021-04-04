@@ -138,6 +138,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jButton13.setBackground(new java.awt.Color(255, 102, 102));
         jButton13.setText("Accessories");
+        jButton13.setBorder(null);
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
@@ -146,6 +147,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jButton14.setBackground(new java.awt.Color(255, 102, 102));
         jButton14.setText("Receipt");
+        jButton14.setBorder(null);
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
@@ -154,6 +156,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jButton15.setBackground(new java.awt.Color(255, 102, 102));
         jButton15.setText("Request");
+        jButton15.setBorder(null);
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton15ActionPerformed(evt);
@@ -289,6 +292,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jButton17.setBackground(new java.awt.Color(255, 102, 102));
         jButton17.setText("Accessories");
+        jButton17.setBorder(null);
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton17ActionPerformed(evt);
@@ -297,6 +301,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jButton18.setBackground(new java.awt.Color(255, 102, 102));
         jButton18.setText("Receipt");
+        jButton18.setBorder(null);
         jButton18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton18ActionPerformed(evt);
@@ -305,6 +310,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jButton19.setBackground(new java.awt.Color(255, 102, 102));
         jButton19.setText("Request");
+        jButton19.setBorder(null);
         jButton19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton19ActionPerformed(evt);
@@ -383,6 +389,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jButton20.setBackground(new java.awt.Color(255, 102, 102));
         jButton20.setText("Accessories");
+        jButton20.setBorder(null);
         jButton20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton20ActionPerformed(evt);
@@ -391,6 +398,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jButton21.setBackground(new java.awt.Color(255, 102, 102));
         jButton21.setText("Receipt");
+        jButton21.setBorder(null);
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton21ActionPerformed(evt);
@@ -399,6 +407,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jButton22.setBackground(new java.awt.Color(255, 102, 102));
         jButton22.setText("Request");
+        jButton22.setBorder(null);
         jButton22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton22ActionPerformed(evt);
