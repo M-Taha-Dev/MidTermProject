@@ -60,6 +60,7 @@ public class NewLogin extends javax.swing.JDialog {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         adminButton.setText("Admin");
+        adminButton.setBorder(null);
         adminButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 adminButtonMouseEntered(evt);
@@ -73,12 +74,16 @@ public class NewLogin extends javax.swing.JDialog {
                 adminButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, -1, -1));
+        jPanel2.add(adminButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 90, 50));
 
         employeeButton.setText("Employee");
+        employeeButton.setBorder(null);
         employeeButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 employeeButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                employeeButtonMouseExited(evt);
             }
         });
         employeeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -86,12 +91,16 @@ public class NewLogin extends javax.swing.JDialog {
                 employeeButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(employeeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 410, -1, -1));
+        jPanel2.add(employeeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 410, 90, 50));
 
         managerButton.setText("Manager");
+        managerButton.setBorder(null);
         managerButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 managerButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                managerButtonMouseExited(evt);
             }
         });
         managerButton.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +108,7 @@ public class NewLogin extends javax.swing.JDialog {
                 managerButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(managerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 410, -1, -1));
+        jPanel2.add(managerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 410, 90, 50));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -160,7 +169,7 @@ public class NewLogin extends javax.swing.JDialog {
 
     private void adminButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButtonMouseExited
         // TODO add your handling code here:
-        adminButton.setBackground(new Color(0,0,0,0));
+        adminButton.setBackground(new Color(51,204,255));
         
     }//GEN-LAST:event_adminButtonMouseExited
 
@@ -189,6 +198,16 @@ public class NewLogin extends javax.swing.JDialog {
         this.setVisible(false);
         form.setVisible(true);
     }//GEN-LAST:event_managerButtonActionPerformed
+
+    private void employeeButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_employeeButtonMouseExited
+        employeeButton.setBackground(new Color(51,204,255));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_employeeButtonMouseExited
+
+    private void managerButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managerButtonMouseExited
+        managerButton.setBackground(new Color(51,204,255));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_managerButtonMouseExited
 
     /**
      * @param args the command line arguments

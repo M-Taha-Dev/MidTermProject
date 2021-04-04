@@ -146,6 +146,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         h1.setBackground(new java.awt.Color(255, 102, 102));
         h1.setText("Home");
         h1.setBorder(null);
+        h1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                h1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                h1MouseExited(evt);
+            }
+        });
         h1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 h1ActionPerformed(evt);
@@ -155,6 +163,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         a1.setBackground(new java.awt.Color(255, 102, 102));
         a1.setText("Add Accessories");
         a1.setBorder(null);
+        a1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                a1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                a1MouseExited(evt);
+            }
+        });
         a1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 a1ActionPerformed(evt);
@@ -164,6 +180,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         r1.setBackground(new java.awt.Color(255, 102, 102));
         r1.setText("Receipts");
         r1.setBorder(null);
+        r1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                r1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                r1MouseExited(evt);
+            }
+        });
         r1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r1ActionPerformed(evt);
@@ -173,6 +197,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         rq1.setBackground(new java.awt.Color(255, 102, 102));
         rq1.setText("Request");
         rq1.setBorder(null);
+        rq1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                rq1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rq1MouseExited(evt);
+            }
+        });
         rq1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rq1ActionPerformed(evt);
@@ -286,6 +318,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         h2.setBackground(new java.awt.Color(255, 102, 102));
         h2.setText("Home");
         h2.setBorder(null);
+        h2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                h2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                h2MouseExited(evt);
+            }
+        });
         h2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 h2ActionPerformed(evt);
@@ -295,6 +335,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         a2.setBackground(new java.awt.Color(255, 102, 102));
         a2.setText("Add Accessories");
         a2.setBorder(null);
+        a2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                a2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                a2MouseExited(evt);
+            }
+        });
         a2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 a2ActionPerformed(evt);
@@ -304,6 +352,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         r2.setBackground(new java.awt.Color(255, 102, 102));
         r2.setText("Receipts");
         r2.setBorder(null);
+        r2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                r2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                r2MouseExited(evt);
+            }
+        });
         r2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r2ActionPerformed(evt);
@@ -313,6 +369,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         rq2.setBackground(new java.awt.Color(255, 102, 102));
         rq2.setText("Request");
         rq2.setBorder(null);
+        rq2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                rq2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rq2MouseExited(evt);
+            }
+        });
         rq2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rq2ActionPerformed(evt);
@@ -422,6 +486,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         h3.setBackground(new java.awt.Color(255, 102, 102));
         h3.setText("Home");
         h3.setBorder(null);
+        h3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                h3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                h3MouseExited(evt);
+            }
+        });
         h3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 h3ActionPerformed(evt);
@@ -431,6 +503,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         a3.setBackground(new java.awt.Color(255, 102, 102));
         a3.setText("Add Accessories");
         a3.setBorder(null);
+        a3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                a3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                a3MouseExited(evt);
+            }
+        });
         a3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 a3ActionPerformed(evt);
@@ -440,6 +520,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         r3.setBackground(new java.awt.Color(255, 102, 102));
         r3.setText("Receipts");
         r3.setBorder(null);
+        r3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                r3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                r3MouseExited(evt);
+            }
+        });
         r3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3ActionPerformed(evt);
@@ -449,6 +537,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         rq3.setBackground(new java.awt.Color(255, 102, 102));
         rq3.setText("Request");
         rq3.setBorder(null);
+        rq3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                rq3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rq3MouseExited(evt);
+            }
+        });
         rq3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rq3ActionPerformed(evt);
@@ -558,6 +654,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         h4.setBackground(new java.awt.Color(255, 102, 102));
         h4.setText("Home");
         h4.setBorder(null);
+        h4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                h4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                h4MouseExited(evt);
+            }
+        });
         h4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 h4ActionPerformed(evt);
@@ -567,6 +671,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         a4.setBackground(new java.awt.Color(255, 102, 102));
         a4.setText("Add Accessories");
         a4.setBorder(null);
+        a4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                a4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                a4MouseExited(evt);
+            }
+        });
         a4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 a4ActionPerformed(evt);
@@ -576,6 +688,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         r4.setBackground(new java.awt.Color(255, 102, 102));
         r4.setText("Receipts");
         r4.setBorder(null);
+        r4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                r4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                r4MouseExited(evt);
+            }
+        });
         r4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4ActionPerformed(evt);
@@ -585,6 +705,14 @@ public class ManagerFrame extends javax.swing.JFrame {
         rq4.setBackground(new java.awt.Color(255, 102, 102));
         rq4.setText("Request");
         rq4.setBorder(null);
+        rq4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                rq4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rq4MouseExited(evt);
+            }
+        });
         rq4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rq4ActionPerformed(evt);
@@ -787,6 +915,167 @@ public class ManagerFrame extends javax.swing.JFrame {
     jTabbedPane1.setSelectedIndex(3);
 // TODO add your handling code here:
     }//GEN-LAST:event_a4ActionPerformed
+
+    private void h1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h1MouseEntered
+        h1.setBackground(new Color(204,255,204));
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_h1MouseEntered
+
+    private void rq1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq1MouseEntered
+        rq1.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq1MouseEntered
+
+    private void r1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r1MouseEntered
+        r1.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r1MouseEntered
+
+    private void a1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a1MouseEntered
+        a1.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a1MouseEntered
+
+    private void h2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h2MouseEntered
+        h2.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_h2MouseEntered
+
+    private void rq2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq2MouseEntered
+        rq2.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq2MouseEntered
+
+    private void r2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r2MouseEntered
+        r2.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r2MouseEntered
+
+    private void a2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a2MouseEntered
+        a2.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a2MouseEntered
+
+    private void h3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h3MouseEntered
+        h3.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_h3MouseEntered
+
+    private void rq3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq3MouseEntered
+        rq3.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq3MouseEntered
+
+    private void r3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r3MouseEntered
+        r3.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r3MouseEntered
+
+    private void a3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a3MouseEntered
+        a3.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a3MouseEntered
+
+    private void h4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h4MouseEntered
+        h4.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_h4MouseEntered
+
+    private void rq4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq4MouseEntered
+        rq4.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq4MouseEntered
+
+    private void r4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r4MouseEntered
+        r4.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r4MouseEntered
+
+    private void a4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a4MouseEntered
+        a4.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a4MouseEntered
+
+    private void h1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h1MouseExited
+        h1.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_h1MouseExited
+
+    private void rq1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq1MouseExited
+        rq1.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq1MouseExited
+
+    private void r1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r1MouseExited
+        r1.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r1MouseExited
+
+    private void a1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a1MouseExited
+        a1.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a1MouseExited
+
+    private void h2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h2MouseExited
+        h2.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_h2MouseExited
+
+    private void rq2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq2MouseExited
+        rq2.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq2MouseExited
+
+    private void r2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r2MouseExited
+        r2.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r2MouseExited
+
+    private void a2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a2MouseExited
+        a2.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a2MouseExited
+
+    private void h3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h3MouseExited
+        h3.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_h3MouseExited
+
+    private void rq3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq3MouseExited
+        rq3.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq3MouseExited
+
+    private void r3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r3MouseExited
+        r3.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r3MouseExited
+
+    private void a3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a3MouseExited
+        a3.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a3MouseExited
+
+    private void h4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h4MouseExited
+        h4.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_h4MouseExited
+
+    private void rq4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq4MouseExited
+        rq4.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq4MouseExited
+
+    private void r4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r4MouseExited
+        r4.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r4MouseExited
+
+    private void a4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a4MouseExited
+        a4.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a4MouseExited
 
     /**
      * @param args the command line arguments

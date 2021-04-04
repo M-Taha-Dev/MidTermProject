@@ -5,6 +5,8 @@
  */
 package midtermproject;
 
+import java.awt.Color;
+
 /**
  *
  * @author DELL
@@ -46,25 +48,25 @@ public class EmployeeFrame extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
+        a1 = new javax.swing.JButton();
+        r1 = new javax.swing.JButton();
+        rq1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
+        a2 = new javax.swing.JButton();
+        r2 = new javax.swing.JButton();
+        rq2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
+        a3 = new javax.swing.JButton();
+        r3 = new javax.swing.JButton();
+        rq3 = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -136,30 +138,54 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 102, 102));
 
-        jButton13.setBackground(new java.awt.Color(255, 102, 102));
-        jButton13.setText("Accessories");
-        jButton13.setBorder(null);
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        a1.setBackground(new java.awt.Color(255, 102, 102));
+        a1.setText("Accessories");
+        a1.setBorder(null);
+        a1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                a1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                a1MouseExited(evt);
+            }
+        });
+        a1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                a1ActionPerformed(evt);
             }
         });
 
-        jButton14.setBackground(new java.awt.Color(255, 102, 102));
-        jButton14.setText("Receipt");
-        jButton14.setBorder(null);
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        r1.setBackground(new java.awt.Color(255, 102, 102));
+        r1.setText("Receipt");
+        r1.setBorder(null);
+        r1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                r1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                r1MouseExited(evt);
+            }
+        });
+        r1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                r1ActionPerformed(evt);
             }
         });
 
-        jButton15.setBackground(new java.awt.Color(255, 102, 102));
-        jButton15.setText("Request");
-        jButton15.setBorder(null);
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        rq1.setBackground(new java.awt.Color(255, 102, 102));
+        rq1.setText("Request");
+        rq1.setBorder(null);
+        rq1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                rq1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rq1MouseExited(evt);
+            }
+        });
+        rq1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                rq1ActionPerformed(evt);
             }
         });
 
@@ -167,19 +193,19 @@ public class EmployeeFrame extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-            .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(a1, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+            .addComponent(r1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(rq1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(124, 124, 124)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(a1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(r1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rq1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(225, Short.MAX_VALUE))
         );
 
@@ -290,30 +316,54 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 102, 102));
 
-        jButton17.setBackground(new java.awt.Color(255, 102, 102));
-        jButton17.setText("Accessories");
-        jButton17.setBorder(null);
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        a2.setBackground(new java.awt.Color(255, 102, 102));
+        a2.setText("Accessories");
+        a2.setBorder(null);
+        a2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                a2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                a2MouseExited(evt);
+            }
+        });
+        a2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                a2ActionPerformed(evt);
             }
         });
 
-        jButton18.setBackground(new java.awt.Color(255, 102, 102));
-        jButton18.setText("Receipt");
-        jButton18.setBorder(null);
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        r2.setBackground(new java.awt.Color(255, 102, 102));
+        r2.setText("Receipt");
+        r2.setBorder(null);
+        r2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                r2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                r2MouseExited(evt);
+            }
+        });
+        r2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                r2ActionPerformed(evt);
             }
         });
 
-        jButton19.setBackground(new java.awt.Color(255, 102, 102));
-        jButton19.setText("Request");
-        jButton19.setBorder(null);
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        rq2.setBackground(new java.awt.Color(255, 102, 102));
+        rq2.setText("Request");
+        rq2.setBorder(null);
+        rq2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                rq2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rq2MouseExited(evt);
+            }
+        });
+        rq2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                rq2ActionPerformed(evt);
             }
         });
 
@@ -321,19 +371,19 @@ public class EmployeeFrame extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
-            .addComponent(jButton18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(a2, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+            .addComponent(r2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(rq2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(124, 124, 124)
-                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(a2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(r2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rq2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(225, Short.MAX_VALUE))
         );
 
@@ -387,30 +437,54 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 102, 102));
 
-        jButton20.setBackground(new java.awt.Color(255, 102, 102));
-        jButton20.setText("Accessories");
-        jButton20.setBorder(null);
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        a3.setBackground(new java.awt.Color(255, 102, 102));
+        a3.setText("Accessories");
+        a3.setBorder(null);
+        a3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                a3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                a3MouseExited(evt);
+            }
+        });
+        a3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                a3ActionPerformed(evt);
             }
         });
 
-        jButton21.setBackground(new java.awt.Color(255, 102, 102));
-        jButton21.setText("Receipt");
-        jButton21.setBorder(null);
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        r3.setBackground(new java.awt.Color(255, 102, 102));
+        r3.setText("Receipt");
+        r3.setBorder(null);
+        r3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                r3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                r3MouseExited(evt);
+            }
+        });
+        r3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                r3ActionPerformed(evt);
             }
         });
 
-        jButton22.setBackground(new java.awt.Color(255, 102, 102));
-        jButton22.setText("Request");
-        jButton22.setBorder(null);
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
+        rq3.setBackground(new java.awt.Color(255, 102, 102));
+        rq3.setText("Request");
+        rq3.setBorder(null);
+        rq3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                rq3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rq3MouseExited(evt);
+            }
+        });
+        rq3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
+                rq3ActionPerformed(evt);
             }
         });
 
@@ -418,19 +492,19 @@ public class EmployeeFrame extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-            .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(a3, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+            .addComponent(r3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(rq3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(124, 124, 124)
-                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(a3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(r3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rq3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(225, Short.MAX_VALUE))
         );
 
@@ -490,61 +564,153 @@ public class EmployeeFrame extends javax.swing.JFrame {
         form.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void a1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a1ActionPerformed
         jTabbedPane1.setSelectedIndex(0);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_a1ActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void a2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a2ActionPerformed
         jTabbedPane1.setSelectedIndex(0);
 
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_a2ActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    private void a3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a3ActionPerformed
 
         jTabbedPane1.setSelectedIndex(0);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    }//GEN-LAST:event_a3ActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void r1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r1ActionPerformed
 
         jTabbedPane1.setSelectedIndex(1);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
+    }//GEN-LAST:event_r1ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void rq1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rq1ActionPerformed
 
         jTabbedPane1.setSelectedIndex(2);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+    }//GEN-LAST:event_rq1ActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void r2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r2ActionPerformed
 
         jTabbedPane1.setSelectedIndex(1);
         
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
+    }//GEN-LAST:event_r2ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+    private void rq2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rq2ActionPerformed
         jTabbedPane1.setSelectedIndex(2);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
+    }//GEN-LAST:event_rq2ActionPerformed
 
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+    private void r3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r3ActionPerformed
         jTabbedPane1.setSelectedIndex(1);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton21ActionPerformed
+    }//GEN-LAST:event_r3ActionPerformed
 
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+    private void rq3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rq3ActionPerformed
         jTabbedPane1.setSelectedIndex(2);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton22ActionPerformed
+    }//GEN-LAST:event_rq3ActionPerformed
+
+    private void a1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a1MouseEntered
+        a1.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a1MouseEntered
+
+    private void r1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r1MouseEntered
+        r1.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r1MouseEntered
+
+    private void rq1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq1MouseEntered
+        rq1.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq1MouseEntered
+
+    private void a2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a2MouseEntered
+
+        a2.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a2MouseEntered
+
+    private void r2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r2MouseEntered
+        r2.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r2MouseEntered
+
+    private void rq2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq2MouseEntered
+        rq2.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq2MouseEntered
+
+    private void a3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a3MouseEntered
+        a3.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a3MouseEntered
+
+    private void r3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r3MouseEntered
+        r3.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r3MouseEntered
+
+    private void rq3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq3MouseEntered
+        rq3.setBackground(new Color(204,255,204));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq3MouseEntered
+
+    private void a3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a3MouseExited
+          a3.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a3MouseExited
+
+    private void r3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r3MouseExited
+         r3.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r3MouseExited
+
+    private void rq3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq3MouseExited
+         rq3.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq3MouseExited
+
+    private void a1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a1MouseExited
+
+         a1.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a1MouseExited
+
+    private void r1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r1MouseExited
+         r1.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r1MouseExited
+
+    private void rq1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq1MouseExited
+         rq1.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq1MouseExited
+
+    private void a2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_a2MouseExited
+         a2.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a2MouseExited
+
+    private void r2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r2MouseExited
+         r2.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r2MouseExited
+
+    private void rq2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rq2MouseExited
+         rq2.setBackground(new Color(255,102,102));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rq2MouseExited
 
     /**
      * @param args the command line arguments
@@ -582,17 +748,11 @@ public class EmployeeFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton a1;
+    private javax.swing.JButton a2;
+    private javax.swing.JButton a3;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -620,5 +780,11 @@ public class EmployeeFrame extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
+    private javax.swing.JButton r1;
+    private javax.swing.JButton r2;
+    private javax.swing.JButton r3;
+    private javax.swing.JButton rq1;
+    private javax.swing.JButton rq2;
+    private javax.swing.JButton rq3;
     // End of variables declaration//GEN-END:variables
 }
