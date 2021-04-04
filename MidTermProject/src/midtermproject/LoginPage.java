@@ -5,6 +5,8 @@
  */
 package midtermproject;
 
+import java.awt.Color;
+import static java.awt.Color.black;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +21,12 @@ public class LoginPage extends javax.swing.JFrame {
     public LoginPage() {
         initComponents();
     }
+    
 
+    @Override
+    public void setBackground(Color bgColor) {
+        super.setBackground(black); //To change body of generated methods, choose Tools | Templates.
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,6 +47,7 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("LOGIN PAGE");
 
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +136,8 @@ public class LoginPage extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addContainerGap(109, Short.MAX_VALUE))
         );
+
+        getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

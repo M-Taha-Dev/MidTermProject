@@ -58,6 +58,11 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTabbedPane1.setBackground(new java.awt.Color(204, 255, 204));
+        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laptop", "NoteBook", "Pen", "Projector" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,13 +150,12 @@ public class EmployeeFrame extends javax.swing.JFrame {
                                     .addComponent(jButton3)))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jButton8)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(453, 453, 453)
-                                        .addComponent(jButton4))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(162, 162, 162)
-                                        .addComponent(jLabel1)))))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(453, 453, 453)
+                                    .addComponent(jButton4)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(146, 146, 146)
+                                .addComponent(jLabel1)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -194,6 +198,8 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Accessories", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -219,21 +225,23 @@ public class EmployeeFrame extends javax.swing.JFrame {
                         .addGap(463, 463, 463)
                         .addComponent(jLabel2))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(283, Short.MAX_VALUE))
+                        .addGap(208, 208, 208)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(233, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel2)
-                .addGap(147, 147, 147)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(110, 110, 110))
         );
 
         jTabbedPane1.addTab("Receipt", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel3.setText("Request Status");
 
@@ -271,7 +279,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(79, 79, 79)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addContainerGap(253, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Request", jPanel3);
@@ -284,9 +292,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

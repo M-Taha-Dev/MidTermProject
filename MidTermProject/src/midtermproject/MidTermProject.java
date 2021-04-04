@@ -16,7 +16,9 @@ public class MidTermProject {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       LoginPage form = new LoginPage();
+       //LoginPage form = new LoginPage();
+       //form.setVisible(true);
+       NewLogin form = new NewLogin();
        form.setVisible(true);
     }
 }
