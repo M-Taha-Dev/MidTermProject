@@ -74,7 +74,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 255, 255), null));
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laptop", "NoteBook", "Pen", "Projector" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -267,7 +267,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Accessories", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -361,8 +361,9 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Receipt", jPanel2);
 
-        jPanel3.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
 
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
         jLabel3.setText("Request Status");
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
@@ -432,19 +433,20 @@ public class EmployeeFrame extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(523, Short.MAX_VALUE))
+                        .addGap(245, 245, 245)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(285, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(323, 323, 323))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jLabel3)
-                .addGap(79, 79, 79)
+                .addGap(74, 74, 74)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()

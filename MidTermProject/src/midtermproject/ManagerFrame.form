@@ -45,7 +45,7 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="33" red="33" type="rgb"/>
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -198,7 +198,7 @@
             <Container class="javax.swing.JPanel" name="jPanel5">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="ff" type="rgb"/>
+                  <Color blue="66" green="66" red="ff" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -236,13 +236,11 @@
                 <Component class="javax.swing.JButton" name="h1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Home"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                        <EmptyBorder/>
-                      </Border>
+                      <Border info="null"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -252,9 +250,12 @@
                 <Component class="javax.swing.JButton" name="a1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Add Accessories"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a1ActionPerformed"/>
@@ -263,9 +264,12 @@
                 <Component class="javax.swing.JButton" name="r1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Receipts"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r1ActionPerformed"/>
@@ -274,9 +278,12 @@
                 <Component class="javax.swing.JButton" name="rq1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Request"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rq1ActionPerformed"/>
@@ -289,7 +296,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="33" red="33" type="rgb"/>
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -411,7 +418,7 @@
             <Container class="javax.swing.JPanel" name="jPanel9">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="ff" type="rgb"/>
+                  <Color blue="66" green="66" red="ff" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -449,9 +456,12 @@
                 <Component class="javax.swing.JButton" name="h2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Home"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="h2ActionPerformed"/>
@@ -460,9 +470,12 @@
                 <Component class="javax.swing.JButton" name="a2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Add Accessories"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a2ActionPerformed"/>
@@ -471,9 +484,12 @@
                 <Component class="javax.swing.JButton" name="r2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Receipts"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r2ActionPerformed"/>
@@ -482,9 +498,12 @@
                 <Component class="javax.swing.JButton" name="rq2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Request"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rq2ActionPerformed"/>
@@ -497,7 +516,7 @@
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="33" red="33" type="rgb"/>
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -618,7 +637,7 @@
             <Container class="javax.swing.JPanel" name="jPanel10">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="ff" type="rgb"/>
+                  <Color blue="66" green="66" red="ff" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -656,9 +675,12 @@
                 <Component class="javax.swing.JButton" name="h3">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Home"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="h3ActionPerformed"/>
@@ -667,9 +689,12 @@
                 <Component class="javax.swing.JButton" name="a3">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Add Accessories"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a3ActionPerformed"/>
@@ -678,9 +703,12 @@
                 <Component class="javax.swing.JButton" name="r3">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Receipts"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r3ActionPerformed"/>
@@ -689,9 +717,12 @@
                 <Component class="javax.swing.JButton" name="rq3">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Request"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rq3ActionPerformed"/>
@@ -704,7 +735,7 @@
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="33" red="33" type="rgb"/>
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -828,7 +859,7 @@
             <Container class="javax.swing.JPanel" name="jPanel11">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="ff" type="rgb"/>
+                  <Color blue="66" green="66" red="ff" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -866,9 +897,12 @@
                 <Component class="javax.swing.JButton" name="h4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Home"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="h4ActionPerformed"/>
@@ -877,9 +911,12 @@
                 <Component class="javax.swing.JButton" name="a4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Add Accessories"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a4ActionPerformed"/>
@@ -888,9 +925,12 @@
                 <Component class="javax.swing.JButton" name="r4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Receipts"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r4ActionPerformed"/>
@@ -899,9 +939,12 @@
                 <Component class="javax.swing.JButton" name="rq4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="ff" red="99" type="rgb"/>
+                      <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Request"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rq4ActionPerformed"/>

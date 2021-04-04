@@ -108,7 +108,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jTabbedPane1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -141,35 +141,38 @@ public class ManagerFrame extends javax.swing.JFrame {
             }
         });
 
-        jPanel5.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel5.setBackground(new java.awt.Color(255, 102, 102));
 
-        h1.setBackground(new java.awt.Color(153, 255, 153));
+        h1.setBackground(new java.awt.Color(255, 102, 102));
         h1.setText("Home");
-        h1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        h1.setBorder(null);
         h1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 h1ActionPerformed(evt);
             }
         });
 
-        a1.setBackground(new java.awt.Color(153, 255, 153));
+        a1.setBackground(new java.awt.Color(255, 102, 102));
         a1.setText("Add Accessories");
+        a1.setBorder(null);
         a1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 a1ActionPerformed(evt);
             }
         });
 
-        r1.setBackground(new java.awt.Color(153, 255, 153));
+        r1.setBackground(new java.awt.Color(255, 102, 102));
         r1.setText("Receipts");
+        r1.setBorder(null);
         r1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r1ActionPerformed(evt);
             }
         });
 
-        rq1.setBackground(new java.awt.Color(153, 255, 153));
+        rq1.setBackground(new java.awt.Color(255, 102, 102));
         rq1.setText("Request");
+        rq1.setBorder(null);
         rq1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rq1ActionPerformed(evt);
@@ -251,7 +254,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Home", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -278,34 +281,38 @@ public class ManagerFrame extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Request");
 
-        jPanel9.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel9.setBackground(new java.awt.Color(255, 102, 102));
 
-        h2.setBackground(new java.awt.Color(153, 255, 153));
+        h2.setBackground(new java.awt.Color(255, 102, 102));
         h2.setText("Home");
+        h2.setBorder(null);
         h2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 h2ActionPerformed(evt);
             }
         });
 
-        a2.setBackground(new java.awt.Color(153, 255, 153));
+        a2.setBackground(new java.awt.Color(255, 102, 102));
         a2.setText("Add Accessories");
+        a2.setBorder(null);
         a2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 a2ActionPerformed(evt);
             }
         });
 
-        r2.setBackground(new java.awt.Color(153, 255, 153));
+        r2.setBackground(new java.awt.Color(255, 102, 102));
         r2.setText("Receipts");
+        r2.setBorder(null);
         r2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r2ActionPerformed(evt);
             }
         });
 
-        rq2.setBackground(new java.awt.Color(153, 255, 153));
+        rq2.setBackground(new java.awt.Color(255, 102, 102));
         rq2.setText("Request");
+        rq2.setBorder(null);
         rq2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rq2ActionPerformed(evt);
@@ -384,7 +391,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Request", jPanel2);
 
-        jPanel3.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -410,34 +417,38 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jButton12.setText("Delete All");
 
-        jPanel10.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel10.setBackground(new java.awt.Color(255, 102, 102));
 
-        h3.setBackground(new java.awt.Color(153, 255, 153));
+        h3.setBackground(new java.awt.Color(255, 102, 102));
         h3.setText("Home");
+        h3.setBorder(null);
         h3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 h3ActionPerformed(evt);
             }
         });
 
-        a3.setBackground(new java.awt.Color(153, 255, 153));
+        a3.setBackground(new java.awt.Color(255, 102, 102));
         a3.setText("Add Accessories");
+        a3.setBorder(null);
         a3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 a3ActionPerformed(evt);
             }
         });
 
-        r3.setBackground(new java.awt.Color(153, 255, 153));
+        r3.setBackground(new java.awt.Color(255, 102, 102));
         r3.setText("Receipts");
+        r3.setBorder(null);
         r3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r3ActionPerformed(evt);
             }
         });
 
-        rq3.setBackground(new java.awt.Color(153, 255, 153));
+        rq3.setBackground(new java.awt.Color(255, 102, 102));
         rq3.setText("Request");
+        rq3.setBorder(null);
         rq3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rq3ActionPerformed(evt);
@@ -516,7 +527,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Receipts", jPanel3);
 
-        jPanel4.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel4.setBackground(new java.awt.Color(204, 255, 255));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laptop", "NoteBook", "Pen", "Projector" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -542,34 +553,38 @@ public class ManagerFrame extends javax.swing.JFrame {
             }
         });
 
-        jPanel11.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel11.setBackground(new java.awt.Color(255, 102, 102));
 
-        h4.setBackground(new java.awt.Color(153, 255, 153));
+        h4.setBackground(new java.awt.Color(255, 102, 102));
         h4.setText("Home");
+        h4.setBorder(null);
         h4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 h4ActionPerformed(evt);
             }
         });
 
-        a4.setBackground(new java.awt.Color(153, 255, 153));
+        a4.setBackground(new java.awt.Color(255, 102, 102));
         a4.setText("Add Accessories");
+        a4.setBorder(null);
         a4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 a4ActionPerformed(evt);
             }
         });
 
-        r4.setBackground(new java.awt.Color(153, 255, 153));
+        r4.setBackground(new java.awt.Color(255, 102, 102));
         r4.setText("Receipts");
+        r4.setBorder(null);
         r4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r4ActionPerformed(evt);
             }
         });
 
-        rq4.setBackground(new java.awt.Color(153, 255, 153));
+        rq4.setBackground(new java.awt.Color(255, 102, 102));
         rq4.setText("Request");
+        rq4.setBorder(null);
         rq4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rq4ActionPerformed(evt);
