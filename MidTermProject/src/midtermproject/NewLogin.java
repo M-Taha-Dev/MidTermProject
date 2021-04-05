@@ -117,7 +117,7 @@ public class NewLogin extends javax.swing.JDialog {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 180, 100));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\depositphotos_189726170-stock-illustration-simple-flying-rocket-spaceship.jpg")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\GitHub Repository\\MidTermProject\\MidTermProject\\depositphotos_189726170-stock-illustration-simple-flying-rocket-spaceship.jpg")); // NOI18N
         jLabel5.setText("jLabel5");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 500, 620));
 
@@ -138,7 +138,7 @@ public class NewLogin extends javax.swing.JDialog {
         jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 280, 30));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\f2c98e653eb9264bcbd83167f0be9c05.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\GitHub Repository\\MidTermProject\\MidTermProject\\f2c98e653eb9264bcbd83167f0be9c05.jpg")); // NOI18N
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 570, 610));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N

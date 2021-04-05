@@ -111,7 +111,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\DELL\Desktop\depositphotos_189726170-stock-illustration-simple-flying-rocket-spaceship.jpg"/>
+              <Image iconType="2" name="C:\Users\DELL\Desktop\GitHub Repository\MidTermProject\MidTermProject\depositphotos_189726170-stock-illustration-simple-flying-rocket-spaceship.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel5"/>
           </Properties>
@@ -178,7 +178,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\DELL\Desktop\f2c98e653eb9264bcbd83167f0be9c05.jpg"/>
+              <Image iconType="2" name="C:\Users\DELL\Desktop\GitHub Repository\MidTermProject\MidTermProject\f2c98e653eb9264bcbd83167f0be9c05.jpg"/>
             </Property>
           </Properties>
           <Constraints>
