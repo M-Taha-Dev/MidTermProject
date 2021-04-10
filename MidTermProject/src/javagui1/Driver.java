@@ -3,22 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package midtermproject;
-
+package javagui1;
 /**
  *
  * @author DELL
  */
-public class MidTermProject {
+public class JavaGUI1 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       //LoginPage form = new LoginPage();
-       //form.setVisible(true);
-       NewLogin form = new NewLogin();
-       form.setVisible(true);
+        Login form = new Login();
+        form.setVisible(true);
+        
     }
 }
