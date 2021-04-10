@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javagui1;
+package midtermproject;
 
 import java.awt.Color;
 
@@ -392,12 +392,12 @@ public class Login extends javax.swing.JFrame {
     private void signInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInButtonActionPerformed
     if(admin.isSelected())
     {
-        Admin form = new Admin();
+        AdminFrame form = new AdminFrame();
         form.setVisible(true);
     }
     else if(employee.isSelected())
     {
-        Employee form = new Employee();
+        EmployeeFrame form = new EmployeeFrame();
         form.setVisible(true);
     }
     else if (manager.isSelected())

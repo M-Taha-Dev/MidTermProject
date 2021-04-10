@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javagui1;
+package midtermproject;
 /**
  *
  * @author DELL
  */
-public class JavaGUI1 {
+public class Driver{
 
     /**
      * @param args the command line arguments
