@@ -402,7 +402,8 @@ public class Login extends javax.swing.JFrame {
     }
     else if (manager.isSelected())
     {
-        //Manager form = new Manager();
+        ManagerFrame form = new ManagerFrame();
+        form.setVisible(true);
     }
        
 
