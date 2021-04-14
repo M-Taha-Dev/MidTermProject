@@ -13,6 +13,6 @@ import java.util.List;
  * @author DELL
  */
 public class Accessories {
-     private List<NonConsumableAccessories> nList = new ArrayList<>();
-    private List<ConsumableAccessories> cList = new ArrayList<>();
+     List<NonConsumableAccessories> nList = new ArrayList<>();
+     List<ConsumableAccessories> cList = new ArrayList<>();
 }

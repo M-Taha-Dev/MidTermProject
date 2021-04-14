@@ -10,10 +10,11 @@ import java.util.*;
  * @author DELL
  */
 public class Request {
+    String email;
     private List<NonConsumableAccessories> nList = new ArrayList<>();
     private List<ConsumableAccessories> cList = new ArrayList<>();
-    private String status;
-
+    private String rqStatus;
+    
     public List<NonConsumableAccessories> getnList() {
         return nList;
     }
@@ -23,9 +24,9 @@ public class Request {
     }
 
     public String getStatus() {
-        return status;
+        return rqStatus;
     }
-
+    
     public void setnList(List<NonConsumableAccessories> nList) {
         this.nList = nList;
     }
@@ -35,7 +36,7 @@ public class Request {
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.rqStatus = status;
     }
     boolean addItemConsumable(ConsumableAccessories obj)
     {

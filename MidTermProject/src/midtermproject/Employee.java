@@ -10,11 +10,13 @@ package midtermproject;
  * @author DELL
  */
 public class Employee {
-   private String name;
-   private String email;
-   private String cellNumber;
-   private Request req;
-   private Receipt rec;
+
+    private String name;
+    private String email;
+    private String cellNumber;
+    private String password;
+    private Request req;
+    private Receipt rec;
 
     public void setName(String name) {
         this.name = name;
@@ -55,5 +57,20 @@ public class Employee {
     public Receipt getRec() {
         return rec;
     }
-    
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void createEmployee(String name, String phone, String email, String password) {
+        this.setCellNumber(phone);
+        this.setEmail(email);
+        this.setName(name);
+        this.setPassword(password);
+
+    }
 }

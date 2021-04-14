@@ -6,6 +6,7 @@
 package midtermproject;
 
 import java.awt.Color;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -18,6 +19,7 @@ public class ManagerFrame extends javax.swing.JFrame {
      */
     public ManagerFrame() {
         initComponents();
+     
     }
 
     /**
@@ -48,6 +50,17 @@ public class ManagerFrame extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        itemComboBox = new javax.swing.JComboBox<>();
+        consumableRadio = new javax.swing.JRadioButton();
+        nonConsumableRadio = new javax.swing.JRadioButton();
+        modelLabel = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
+        yearLabel = new javax.swing.JLabel();
+        modelField = new javax.swing.JTextField();
+        yearField = new javax.swing.JTextField();
+        companyName = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -200,13 +213,10 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -305,16 +315,57 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab3", jPanel4);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 885, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
-        );
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("Select Item");
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 209, -1, 28));
+
+        itemComboBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel5.add(itemComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 209, 200, -1));
+
+        consumableRadio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        consumableRadio.setText("Consumable Item");
+        consumableRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consumableRadioActionPerformed(evt);
+            }
+        });
+        jPanel5.add(consumableRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 114, -1, -1));
+
+        nonConsumableRadio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        nonConsumableRadio.setText("Non Consumable Item");
+        nonConsumableRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nonConsumableRadioActionPerformed(evt);
+            }
+        });
+        jPanel5.add(nonConsumableRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 114, -1, -1));
+
+        modelLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        modelLabel.setText("Model");
+        jPanel5.add(modelLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 414, -1, 28));
+
+        nameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        nameLabel.setText("Company Name");
+        jPanel5.add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 330, -1, 28));
+
+        yearLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        yearLabel.setText("Year of Manufacture");
+        jPanel5.add(yearLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 499, -1, 36));
+
+        modelField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel5.add(modelField, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 408, 270, 40));
+
+        yearField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel5.add(yearField, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 497, 270, 40));
+
+        companyName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel5.add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 324, 270, 40));
+
+        jButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton5.setText("Done");
+        jPanel5.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 639, 112, 53));
 
         jTabbedPane1.addTab("tab4", jPanel5);
 
@@ -390,7 +441,6 @@ public class ManagerFrame extends javax.swing.JFrame {
         Login form = new Login();
         this.setVisible(false);
         form.setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_adminButton3ActionPerformed
 
     private void adminButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton4MouseClicked
@@ -445,6 +495,37 @@ public class ManagerFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void nonConsumableRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nonConsumableRadioActionPerformed
+        // TODO add your handling code here:
+        consumableRadio.setSelected(false);
+        modelLabel.setVisible(true);
+        yearLabel.setVisible(true);
+        modelField.setVisible(true);
+        yearField.setVisible(true);
+      //  itemComboBox = new JComboBox();
+        itemComboBox.addItem("Laptop");
+        itemComboBox.addItem("Projector");
+        itemComboBox.addItem("Chair");
+        itemComboBox.addItem("Mobile");
+        itemComboBox.addItem("Computer");
+    }//GEN-LAST:event_nonConsumableRadioActionPerformed
+
+    private void consumableRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consumableRadioActionPerformed
+        // TODO add your handling code here:
+        nonConsumableRadio.setSelected(false);
+        modelLabel.setVisible(false);
+        yearLabel.setVisible(false);
+        modelField.setVisible(false);
+        yearField.setVisible(false);
+      //  itemComboBox = new JComboBox();
+        itemComboBox.addItem("File");
+        itemComboBox.addItem("Paper");
+        itemComboBox.addItem("Pencil");
+        itemComboBox.addItem("NoteBook");
+        itemComboBox.addItem("File Holder");
+        
+    }//GEN-LAST:event_consumableRadioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -455,9 +536,9 @@ public class ManagerFrame extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManagerFrame.LookAndFeelInfo info : javax.swing.UIManagerFrame.getInstalledLookAndFeels()) {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManagerFrame.setLookAndFeel(info.getClassName());
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
@@ -486,11 +567,16 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JButton adminButton3;
     private javax.swing.JButton adminButton4;
     private javax.swing.JButton adminButton5;
+    private javax.swing.JTextField companyName;
+    private javax.swing.JRadioButton consumableRadio;
+    private javax.swing.JComboBox<String> itemComboBox;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -500,5 +586,11 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField modelField;
+    private javax.swing.JLabel modelLabel;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JRadioButton nonConsumableRadio;
+    private javax.swing.JTextField yearField;
+    private javax.swing.JLabel yearLabel;
     // End of variables declaration//GEN-END:variables
 }
