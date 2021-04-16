@@ -71,6 +71,5 @@ public class Employee {
         this.setEmail(email);
         this.setName(name);
         this.setPassword(password);
-
     }
 }

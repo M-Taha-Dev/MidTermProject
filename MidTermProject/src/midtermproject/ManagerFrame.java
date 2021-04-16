@@ -83,20 +83,22 @@ public class ManagerFrame extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         requestTable = new javax.swing.JTable();
-        acceptButton = new javax.swing.JButton();
+        viewButton1 = new javax.swing.JButton();
         rejectAllButton = new javax.swing.JButton();
         acceptAllButton = new javax.swing.JButton();
         requestPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        acceptButton1 = new javax.swing.JButton();
-        acceptButton2 = new javax.swing.JButton();
+        empName = new javax.swing.JTextField();
+        empPhone = new javax.swing.JTextField();
+        empEmail = new javax.swing.JTextField();
+        acceptButton = new javax.swing.JButton();
+        rejectButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         employeeRequest = new javax.swing.JTable();
+        reqIDField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -245,6 +247,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 340, 800));
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         searchField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -299,6 +302,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         });
         jPanel2.add(actionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 160, 160, 57));
 
+        nonConsumableHome.setBackground(new java.awt.Color(255, 255, 255));
         nonConsumableHome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         nonConsumableHome.setText("Non Consumable Item");
         nonConsumableHome.addActionListener(new java.awt.event.ActionListener() {
@@ -308,6 +312,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         });
         jPanel2.add(nonConsumableHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, -1, -1));
 
+        consumableHome.setBackground(new java.awt.Color(255, 255, 255));
         consumableHome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         consumableHome.setText("Consumable Item");
         consumableHome.addActionListener(new java.awt.event.ActionListener() {
@@ -333,6 +338,8 @@ public class ManagerFrame extends javax.swing.JFrame {
             }
         });
         jPanel2.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 240, 136, 57));
+
+        homePanel.setBackground(new java.awt.Color(255, 255, 255));
 
         editButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         editButton.setText("Edit");
@@ -428,6 +435,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jPanel2.add(homePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 490, 440));
 
+        homeModelRadio.setBackground(new java.awt.Color(255, 255, 255));
         homeModelRadio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         homeModelRadio.setText("Model");
         homeModelRadio.addActionListener(new java.awt.event.ActionListener() {
@@ -437,6 +445,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         });
         jPanel2.add(homeModelRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 320, -1, -1));
 
+        homeCompanyRadio.setBackground(new java.awt.Color(255, 255, 255));
         homeCompanyRadio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         homeCompanyRadio.setText("Company Name");
         homeCompanyRadio.addActionListener(new java.awt.event.ActionListener() {
@@ -448,6 +457,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab1", jPanel2);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         requestTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -467,14 +477,14 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 570, 380));
 
-        acceptButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        acceptButton.setText("View");
-        acceptButton.addActionListener(new java.awt.event.ActionListener() {
+        viewButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        viewButton1.setText("View");
+        viewButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                acceptButtonActionPerformed(evt);
+                viewButton1ActionPerformed(evt);
             }
         });
-        jPanel3.add(acceptButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 530, 136, 57));
+        jPanel3.add(viewButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 530, 136, 57));
 
         rejectAllButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         rejectAllButton.setText("Reject All");
@@ -495,7 +505,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         jPanel3.add(acceptAllButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 150, 57));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Employee Name: ");
+        jLabel3.setText("Request ID: ");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Phone No.: ");
@@ -503,25 +513,25 @@ public class ManagerFrame extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Email: ");
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        empName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        empPhone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        empEmail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        acceptButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        acceptButton1.setText("Accept");
-        acceptButton1.addActionListener(new java.awt.event.ActionListener() {
+        acceptButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        acceptButton.setText("Accept");
+        acceptButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                acceptButton1ActionPerformed(evt);
+                acceptButtonActionPerformed(evt);
             }
         });
 
-        acceptButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        acceptButton2.setText("Reject");
-        acceptButton2.addActionListener(new java.awt.event.ActionListener() {
+        rejectButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        rejectButton.setText("Reject");
+        rejectButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                acceptButton2ActionPerformed(evt);
+                rejectButtonActionPerformed(evt);
             }
         });
 
@@ -535,58 +545,70 @@ public class ManagerFrame extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(employeeRequest);
 
+        reqIDField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setText("Employee Name: ");
+
         javax.swing.GroupLayout requestPanelLayout = new javax.swing.GroupLayout(requestPanel);
         requestPanel.setLayout(requestPanelLayout);
         requestPanelLayout.setHorizontalGroup(
             requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(requestPanelLayout.createSequentialGroup()
-                .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addGap(68, 68, 68)
+                .addComponent(reqIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(requestPanelLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(acceptButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(rejectButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(requestPanelLayout.createSequentialGroup()
+                .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(requestPanelLayout.createSequentialGroup()
-                        .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(requestPanelLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel3))
-                            .addGroup(requestPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel4))
-                            .addGroup(requestPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel5)))
-                        .addGap(33, 33, 33)
-                        .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)))
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel6))
                     .addGroup(requestPanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(acceptButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                        .addComponent(acceptButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel4))
+                    .addGroup(requestPanelLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel5)))
+                .addGap(31, 31, 31)
+                .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(empEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empName, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         requestPanelLayout.setVerticalGroup(
             requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(requestPanelLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(23, 23, 23)
                 .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(reqIDField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(requestPanelLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel6))
+                    .addComponent(empName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(empPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(empEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(acceptButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(acceptButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63))
+                .addGap(63, 63, 63)
+                .addGroup(requestPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(acceptButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rejectButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel3.add(requestPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 780));
@@ -606,6 +628,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab3", jPanel4);
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -615,6 +638,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         itemComboBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jPanel5.add(itemComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 209, 200, -1));
 
+        consumableRadio.setBackground(new java.awt.Color(255, 255, 255));
         consumableRadio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         consumableRadio.setText("Consumable Item");
         consumableRadio.addActionListener(new java.awt.event.ActionListener() {
@@ -624,6 +648,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         });
         jPanel5.add(consumableRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 114, -1, -1));
 
+        nonConsumableRadio.setBackground(new java.awt.Color(255, 255, 255));
         nonConsumableRadio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         nonConsumableRadio.setText("Non Consumable Item");
         nonConsumableRadio.addActionListener(new java.awt.event.ActionListener() {
@@ -741,14 +766,19 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void adminButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton4MouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_adminButton4MouseClicked
 
     private void adminButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton4MouseEntered
         // TODO add your handling code here:
+         adminButton4.setBackground(Color.white);
+        adminButton4.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_adminButton4MouseEntered
 
     private void adminButton4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton4MouseExited
         // TODO add your handling code here:
+        adminButton4.setBackground(new Color(255, 0, 51));
+        adminButton4.setForeground(new Color(255, 255, 255));
     }//GEN-LAST:event_adminButton4MouseExited
 
     private void adminButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton4ActionPerformed
@@ -762,10 +792,14 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void adminButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton5MouseEntered
         // TODO add your handling code here:
+          adminButton5.setBackground(Color.white);
+        adminButton5.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_adminButton5MouseEntered
 
     private void adminButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton5MouseExited
         // TODO add your handling code here:
+        adminButton5.setBackground(new Color(255, 0, 51));
+        adminButton5.setForeground(new Color(255, 255, 255));
     }//GEN-LAST:event_adminButton5MouseExited
 
     private void adminButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton5ActionPerformed
@@ -1049,20 +1083,19 @@ public class ManagerFrame extends javax.swing.JFrame {
         }
         return array;
     }
-    
-    
-    void createReqTable1()
-    {
-        String [][] rowData = employeeRequestData();
-        String []columnHeader = {"Req ID","Employee Email","Status","Date & Time"};
+
+    void createReqTable1() {
+        String[][] rowData = employeeRequestData();
+        String[] columnHeader = {"Req ID", "Employee Email", "Status", "Date & Time"};
         DefaultTableModel model = (DefaultTableModel) requestTable.getModel();
         model.setDataVector(rowData, columnHeader);
     }
-    
-    private void acceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptButtonActionPerformed
+
+    private void viewButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButton1ActionPerformed
         // TODO add your handling code here:
         requestPanel.setVisible(true);
-    }//GEN-LAST:event_acceptButtonActionPerformed
+        
+    }//GEN-LAST:event_viewButton1ActionPerformed
 
     private void rejectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectAllButtonActionPerformed
         // TODO add your handling code here:
@@ -1079,20 +1112,116 @@ public class ManagerFrame extends javax.swing.JFrame {
         int rowIndex = m.getMinSelectionIndex();
         String email = (String) model.getValueAt(rowIndex, 1);
         String reqID = (String) model.getValueAt(rowIndex, 0);
-        
+        Request reqObj = Manager.getInstance().searchReqID(reqID);
+        Employee empObj = Admin.getInstance().viewEmployee(email);
+        showEmployeeRequest(empObj, reqObj);
+
     }//GEN-LAST:event_requestTableMouseClicked
 
-    private void acceptButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptButton1ActionPerformed
+    private void acceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_acceptButton1ActionPerformed
+        String id = reqIDField.getText();
+        Request obj = Manager.getInstance().searchReqID(id);
+        boolean check = Manager.getInstance().acceptRequest(obj);
+        Receipt rec = new Receipt();
+        if(check)
+        {
+            rec = Manager.getInstance().createReceipt(id);
+            Manager.getInstance().addReceipt(rec);
+            JOptionPane.showMessageDialog(null,"Operation Successful");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Operation was not Successful");
+        }
+        reqIDField.setText("");
+        empName.setText("");
+        empPhone.setText("");
+        empEmail.setText("");
+        requestPanel.setVisible(false);
+    }//GEN-LAST:event_acceptButtonActionPerformed
 
-    private void acceptButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptButton2ActionPerformed
+    private void rejectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_acceptButton2ActionPerformed
+        String id = reqIDField.getText();
+        Request obj = Manager.getInstance().searchReqID(id);
+        boolean check = Manager.getInstance().rejectRequest(obj);
+        if(check)
+        {
+            JOptionPane.showMessageDialog(null,"Operation Successful");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Operation was not Successful");
+        }
+        reqIDField.setText("");
+        empName.setText("");
+        empPhone.setText("");
+        empEmail.setText("");
+        requestPanel.setVisible(false);
+    }//GEN-LAST:event_rejectButtonActionPerformed
 
-    /*String[][] requestTableData() {
+    void showEmployeeRequest(Employee emp, Request req) {
+        empName.setText(emp.getName());
+        empPhone.setText(emp.getCellNumber());
+        empEmail.setText(emp.getEmail());
+        reqIDField.setText(req.getReqID());
+        empName.setEditable(false);
+        empPhone.setEditable(false);
+        empEmail.setEditable(false);
+        String[][] rowData = createEmployeeReqTable(req.getnList(), req.getcList());
+        String[] columnHeader = {"Company", "Tag", "Item", "Type"};
+        DefaultTableModel model = (DefaultTableModel) employeeRequest.getModel();
+        model.setDataVector(rowData, columnHeader);
+    }
 
-    }*/
+    String[][] createEmployeeReqTable(List<NonConsumableAccessories> nList, List<ConsumableAccessories> cList) {
+        int r = nList.size() + cList.size();
+        int c = 4;
+        String array[][] = new String[r][c];
+        String temp = "";
+        String input = "";
+        for (int i = 0; i < nList.size(); i++) {
+            temp = temp + nList.get(i).getCompanyName() + ",";
+            temp = temp + nList.get(i).getModel() + ",";
+            temp = temp + nList.get(i).getType() + ",";
+            temp = temp + "Non Consumable";
+            if (i < nList.size() - 1) {
+                temp = temp + ",";
+            }
+        }
+        for (int i = 0; i < cList.size(); i++) {
+            input = input + cList.get(i).getCompanyName() + ",";
+            input = input + cList.get(i).getTag() + ",";
+            input = input + cList.get(i).getType() + ",";
+            input = input + "Consumable";
+            if (i < cList.size() - 1) {
+                input = input + ",";
+            }
+        }
+        String out = "";
+        if (!temp.equals("") && (!input.equals(""))) {
+            out = temp + "," + input;
+        } else if (!temp.equals("")) {
+            out = temp;
+        } else if (!input.equals("")) {
+            out = input;
+        }
+        String arr[] = out.split(",");
+        int k = 0;
+
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (k < arr.length) {
+                    array[i][j] = arr[k];
+                    k++;
+                }
+            }
+        }
+        return array;
+    }
+
+  
 
     void showDataN() {
         //homePanel.setVisible(true);
@@ -1230,8 +1359,6 @@ public class ManagerFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton acceptAllButton;
     private javax.swing.JButton acceptButton;
-    private javax.swing.JButton acceptButton1;
-    private javax.swing.JButton acceptButton2;
     private javax.swing.JButton actionButton;
     private javax.swing.JButton adminButton1;
     private javax.swing.JButton adminButton2;
@@ -1246,6 +1373,9 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton consumableRadio;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;
+    private javax.swing.JTextField empEmail;
+    private javax.swing.JTextField empName;
+    private javax.swing.JTextField empPhone;
     private javax.swing.JTable employeeRequest;
     private javax.swing.JComboBox<String> homeComboBox;
     private javax.swing.JTextField homeCompanyName;
@@ -1265,6 +1395,7 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1274,9 +1405,6 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTable managerTable;
     private javax.swing.JTextField modelField;
     private javax.swing.JLabel modelLabel;
@@ -1284,11 +1412,14 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton nonConsumableHome;
     private javax.swing.JRadioButton nonConsumableRadio;
     private javax.swing.JButton rejectAllButton;
+    private javax.swing.JButton rejectButton;
+    private javax.swing.JTextField reqIDField;
     private javax.swing.JPanel requestPanel;
     private javax.swing.JTable requestTable;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchField;
     private javax.swing.JButton viewButton;
+    private javax.swing.JButton viewButton1;
     private javax.swing.JTextField yearField;
     private javax.swing.JLabel yearLabel;
     // End of variables declaration//GEN-END:variables

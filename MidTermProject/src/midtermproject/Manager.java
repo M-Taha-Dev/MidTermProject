@@ -16,6 +16,7 @@ public class Manager extends Accessories {
     List<Receipt> recList = new ArrayList<>();
     List<Request> reqList = new ArrayList<>();
     private static Manager instance;
+
     private Manager() {
         recList = new ArrayList<>();
         reqList = new ArrayList<>();
@@ -40,17 +41,16 @@ public class Manager extends Accessories {
         }
         return instance;
     }
-    
-    public boolean fetchRequests(Request obj)
-    {
+
+    public boolean fetchRequests(Request obj) {
         boolean check = false;
-        
+
         reqList.add(obj);
         check = true;
-        
+
         return check;
     }
-    
+
     public boolean acceptRequest(Request obj) {
 
         if (obj != null) {
@@ -64,7 +64,7 @@ public class Manager extends Accessories {
     public boolean rejectRequest(Request obj) {
         if (obj != null) {
             obj.setStatus("Rejected");
-            return false;
+            return true;
         } else {
             return false;
         }
@@ -88,35 +88,29 @@ public class Manager extends Accessories {
         }
     }
 
-   /* public boolean editConsumableAccessories(ConsumableAccessories obj) {
+    /* public boolean editConsumableAccessories(ConsumableAccessories obj) {
         boolean check = false;
         for(int i=0;i<nList.size();i++)
         {
             if(nList.get(i).getModel().equals(obj.get))
         }
     }*/
-
-    public boolean editNonConsumableAccessories(NonConsumableAccessories obj,String model) {
-       boolean check = false;
-        for(int i=0;i<nList.size();i++)
-        {
-            if(nList.get(i).getModel().equals(model))
-            {
-                nList.set(i,obj);
+    public boolean editNonConsumableAccessories(NonConsumableAccessories obj, String model) {
+        boolean check = false;
+        for (int i = 0; i < nList.size(); i++) {
+            if (nList.get(i).getModel().equals(model)) {
+                nList.set(i, obj);
                 check = true;
                 break;
             }
         }
         return check;
     }
-    
-    public boolean editConsumableAccessories(ConsumableAccessories obj,String tag)
-    {
+
+    public boolean editConsumableAccessories(ConsumableAccessories obj, String tag) {
         boolean check = false;
-        for (int i=0;i<cList.size();i++)
-        {
-            if(cList.get(i).getTag().equals(tag))
-            {
+        for (int i = 0; i < cList.size(); i++) {
+            if (cList.get(i).getTag().equals(tag)) {
                 cList.set(i, obj);
                 check = true;
                 break;
@@ -126,11 +120,9 @@ public class Manager extends Accessories {
     }
 
     public boolean deleteNonConsumableAccessories(String model) {
-       boolean check = false;
-        for(int i=0;i<nList.size();i++)
-        {
-            if(nList.get(i).getModel().equals(model))
-            {
+        boolean check = false;
+        for (int i = 0; i < nList.size(); i++) {
+            if (nList.get(i).getModel().equals(model)) {
                 nList.remove(i);
                 check = true;
                 break;
@@ -138,13 +130,11 @@ public class Manager extends Accessories {
         }
         return check;
     }
-    
+
     public boolean deleteConsumableAccessories(String model) {
-      boolean check = false;
-        for(int i=0;i<cList.size();i++)
-        {
-            if(cList.get(i).getTag().equals(model))
-            {
+        boolean check = false;
+        for (int i = 0; i < cList.size(); i++) {
+            if (cList.get(i).getTag().equals(model)) {
                 cList.remove(i);
                 check = true;
                 break;
@@ -250,18 +240,55 @@ public class Manager extends Accessories {
         }
         return obj;
     }
-    
-    boolean checkID(String ID)
-    {
+
+    boolean checkID(String ID) {
         boolean check = true;
-        for (int i=0;i<reqList.size();i++)
-        {
-            if(reqList.get(i).getReqID().equals(ID))
-            {
+        for (int i = 0; i < reqList.size(); i++) {
+            if (reqList.get(i).getReqID().equals(ID)) {
                 check = false;
                 break;
             }
         }
         return check;
+    }
+
+    Request searchReqID(String ID) {
+        Request obj = new Request();
+
+        for (int i = 0; i < reqList.size(); i++) {
+            if (reqList.get(i).getReqID().equals(ID)) {
+                obj = reqList.get(i);
+            }
+        }
+        return obj;
+    }
+
+    Receipt createReceipt(String ID) {
+        Receipt obj = (Receipt) new Request();
+
+        for (int i = 0; i < reqList.size(); i++) {
+            if (reqList.get(i).getReqID().equals(ID)) {
+                obj = (Receipt) reqList.get(i);
+            }
+        }
+        return obj;
+    }
+
+    boolean addReceipt(Receipt obj) {
+        if (obj != null) {
+            recList.add(obj);
+            return true;
+        }
+        return false;
+    }
+
+    List<Receipt> getEmployeeReceiptShow(String email) {
+        List<Receipt> strList = new ArrayList<>();
+        for (int i = 0; i < recList.size(); i++) {
+            if (recList.get(i).getEmail().equals(email)) {
+                strList.add(recList.get(i));
+            }
+        }
+        return strList;
     }
 }

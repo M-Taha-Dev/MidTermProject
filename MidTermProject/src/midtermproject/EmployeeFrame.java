@@ -35,6 +35,14 @@ public class EmployeeFrame extends javax.swing.JFrame {
         initComponents();
         selectedPanel.setVisible(false);
         outPanel.setVisible(false);
+         String reqID = "";
+        /*if(Manager.getInstance().recList.size() >0)
+        {
+        reqID = Manager.getInstance().recList.get(0).getReqID();
+        }
+        Receipt rec  =(Receipt) Manager.getInstance().searchReqID(reqID);
+        Employee emp =  Admin.getInstance().viewEmployee(email);
+        showEmployeeRec( emp, rec);*/
     }
     /*public EmployeeFrame(String email)
     {
@@ -77,7 +85,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        receiptTable = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
@@ -363,35 +371,15 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        receiptTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "Sr.No", "Receipts"
+
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
-        if (jTable3.getColumnModel().getColumnCount() > 0) {
-            jTable3.getColumnModel().getColumn(0).setMaxWidth(50);
-            jTable3.getColumnModel().getColumn(1).setMaxWidth(500);
-        }
+        jScrollPane3.setViewportView(receiptTable);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setText("Receipts");
@@ -856,7 +844,69 @@ public class EmployeeFrame extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) selectedTable.getModel();
         model.setDataVector(rowData, columnHeader);
     }
+    
+    
+     void showEmployeeRec(Employee emp, Receipt req) {
+        
+        String[][] rowData = createEmployeeRecTable(req.getnList(), req.getcList());
+        String[] columnHeader = {"Company", "Tag", "Item", "Type"};
+        DefaultTableModel model = (DefaultTableModel) receiptTable.getModel();
+        model.setDataVector(rowData, columnHeader);
+    }
+    
+    
+    
+    
+     String[][] createEmployeeRecTable(List<NonConsumableAccessories> nList, List<ConsumableAccessories> cList) {
+        int r = nList.size() + cList.size();
+        int c = 4;
+        String array[][] = new String[r][c];
+        String temp = "";
+        String input = "";
+        for (int i = 0; i < nList.size(); i++) {
+            temp = temp + nList.get(i).getCompanyName() + ",";
+            temp = temp + nList.get(i).getModel() + ",";
+            temp = temp + nList.get(i).getType() + ",";
+            temp = temp + "Non Consumable";
+            if (i < nList.size() - 1) {
+                temp = temp + ",";
+            }
+        }
+        for (int i = 0; i < cList.size(); i++) {
+            input = input + cList.get(i).getCompanyName() + ",";
+            input = input + cList.get(i).getTag() + ",";
+            input = input + cList.get(i).getType() + ",";
+            input = input + "Consumable";
+            if (i < cList.size() - 1) {
+                input = input + ",";
+            }
+        }
+        String out = "";
+        if (!temp.equals("") && (!input.equals(""))) {
+            out = temp + "," + input;
+        } else if (!temp.equals("")) {
+            out = temp;
+        } else if (!input.equals("")) {
+            out = input;
+        }
+        String arr[] = out.split(",");
+        int k = 0;
 
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (k < arr.length) {
+                    array[i][j] = arr[k];
+                    k++;
+                }
+            }
+        }
+        return array;
+    }
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -918,10 +968,10 @@ public class EmployeeFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable3;
     private javax.swing.JRadioButton nonConsumableRadio;
     private javax.swing.JPanel outPanel;
     private javax.swing.JTable outTable;
+    private javax.swing.JTable receiptTable;
     private javax.swing.JPanel selectedPanel;
     private javax.swing.JTable selectedTable;
     // End of variables declaration//GEN-END:variables

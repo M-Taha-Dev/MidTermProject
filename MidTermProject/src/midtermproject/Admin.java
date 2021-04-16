@@ -16,18 +16,13 @@ public class Admin {
     private static Admin instance;
     private List<Employee> employeeList = new ArrayList<>();
      Employee o =new Employee();
-        
-           
-    
-    
-    
-    
     private Admin() {
         employeeList = new ArrayList<>();
         this.o.setName("Muhammad Taha");
         this.o.setEmail("taha@gmail.com");
         this.o.setCellNumber("03323491128");
         this.o.setPassword("Taha123");
+        this.addEmployee(o);
     }
 
     static Admin getInstance() {
