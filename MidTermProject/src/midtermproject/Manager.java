@@ -40,7 +40,17 @@ public class Manager extends Accessories {
         }
         return instance;
     }
-
+    
+    public boolean fetchRequests(Request obj)
+    {
+        boolean check = false;
+        
+        reqList.add(obj);
+        check = true;
+        
+        return check;
+    }
+    
     public boolean acceptRequest(Request obj) {
 
         if (obj != null) {
@@ -239,5 +249,19 @@ public class Manager extends Accessories {
             }
         }
         return obj;
+    }
+    
+    boolean checkID(String ID)
+    {
+        boolean check = true;
+        for (int i=0;i<reqList.size();i++)
+        {
+            if(reqList.get(i).getReqID().equals(ID))
+            {
+                check = false;
+                break;
+            }
+        }
+        return check;
     }
 }

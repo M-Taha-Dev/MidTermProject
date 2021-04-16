@@ -6,6 +6,7 @@
 package midtermproject;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,15 +38,15 @@ public class Login extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        jTextField2 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         signInButton = new javax.swing.JButton();
         admin = new javax.swing.JRadioButton();
         employee = new javax.swing.JRadioButton();
         manager = new javax.swing.JRadioButton();
+        password = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -116,16 +117,12 @@ public class Login extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(255, 0, 51));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 354, 70));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField1.setBorder(null);
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 350, 50));
+        email.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        email.setBorder(null);
+        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 350, 50));
 
         jSeparator2.setBackground(new java.awt.Color(255, 0, 51));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 361, 40));
-
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField2.setBorder(null);
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 370, 51));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setText("Username");
@@ -194,6 +191,10 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(manager, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 470, -1, -1));
+
+        password.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        password.setBorder(null);
+        jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 350, 50));
 
         jTabbedPane1.addTab("tab1", jPanel2);
 
@@ -397,8 +398,19 @@ public class Login extends javax.swing.JFrame {
     }
     else if(employee.isSelected())
     {
+       // String employeeEmail = email.getText();
+       /* char arr[] = password.getPassword();
+        String pass = String.valueOf(arr);
+        boolean flag = Admin.getInstance().signIn(employeeEmail, pass);
+        if(flag)
+        {*/
         EmployeeFrame form = new EmployeeFrame();
         form.setVisible(true);
+        //}
+        /*else
+        {
+            JOptionPane.showMessageDialog(null,"Invalid!");
+        }*/
     }
     else if (manager.isSelected())
     {
@@ -469,6 +481,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JRadioButton admin;
     private javax.swing.JButton adminButton;
     private javax.swing.JButton adminButton1;
+    private javax.swing.JTextField email;
     private javax.swing.JRadioButton employee;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -486,12 +499,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JRadioButton manager;
+    private javax.swing.JPasswordField password;
     private javax.swing.JButton signInButton;
     // End of variables declaration//GEN-END:variables
 }

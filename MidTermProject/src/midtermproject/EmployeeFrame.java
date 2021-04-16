@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package midtermproject;
+
 import java.util.*;
 import java.awt.Color;
 import java.util.List;
@@ -22,14 +23,26 @@ public class EmployeeFrame extends javax.swing.JFrame {
      * Creates new form Employee
      */
     String searchModel;
+    String selectedType;
     String selectedModel;
-    List<NonConsumableAccessories>nList1 = new ArrayList<>();
-    List<ConsumableAccessories>cList1 = new ArrayList<>();
+    List<NonConsumableAccessories> nList1 = new ArrayList<>();
+    List<ConsumableAccessories> cList1 = new ArrayList<>();
+    NonConsumableAccessories ncObj = new NonConsumableAccessories();
+    ConsumableAccessories cObj = new ConsumableAccessories();
+    String email = "taha@gmail.com";
+    
     public EmployeeFrame() {
         initComponents();
         selectedPanel.setVisible(false);
         outPanel.setVisible(false);
     }
+    /*public EmployeeFrame(String email)
+    {
+         initComponents();
+        selectedPanel.setVisible(false);
+        outPanel.setVisible(false);
+        this.email = email;
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -250,6 +263,11 @@ public class EmployeeFrame extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Remove");
         jButton1.setFocusable(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(51, 102, 255));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -266,18 +284,17 @@ public class EmployeeFrame extends javax.swing.JFrame {
         selectedPanel.setLayout(selectedPanelLayout);
         selectedPanelLayout.setHorizontalGroup(
             selectedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(selectedPanelLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(selectedPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addGap(31, 31, 31))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, selectedPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(selectedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, selectedPanelLayout.createSequentialGroup()
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton5)))
+                .addGap(37, 37, 37))
         );
         selectedPanelLayout.setVerticalGroup(
             selectedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -517,6 +534,9 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        cList1 = new ArrayList<>();
+        nList1 = new ArrayList<>();
+        createSelectedTable(nList1, cList1);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -565,6 +585,31 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        if (selectedType.equals("Non Consumable")) {
+            for (int i = 0; i < nList1.size(); i++) {
+                if (nList1.get(i).getModel().equals(selectedModel)) {
+                    ncObj = nList1.get(i);
+                    break;
+                }
+            }
+        } else if (selectedType.equals("Consumable")) {
+            for (int i = 0; i < nList1.size(); i++) {
+                if (cList1.get(i).getTag().equals(selectedModel)) {
+                    cObj = cList1.get(i);
+                    break;
+                }
+            }
+        }
+
+        String out = "";
+        if (ncObj != null) {
+            out = String.format("Item: " + ncObj.getType() + "  " + "Type: " + "Non Consumable" + "\n" + "Company Name: " + ncObj.getCompanyName() + "\n" + "Model No.: " + ncObj.getModel() + "\n" + "Year of Manufacture:  " + ncObj.getYearOfManufacture());
+        } else if (cObj != null) {
+            out = String.format("Item: " + cObj.getType() + "  " + "Type: " + "Non Consumable" + "\n" + "Company Name: " + cObj.getCompanyName() + "\n" + "Model No.: " + cObj.getTag() + "\n");
+        }
+        JOptionPane.showMessageDialog(null, out);
+        //cObj = null;
+        //ncObj = null;
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void consumableRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consumableRadioActionPerformed
@@ -616,6 +661,32 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+        if (nList1.size() > 0 && cList1.size() > 0) {
+            Request obj = new Request();
+            obj.setcList(cList1);
+            obj.setnList(nList1);
+            obj.generateID();
+            obj.setEmail(email);
+            obj.setTimeq();
+            Manager.getInstance().fetchRequests(obj);
+        } else if (nList1.size() > 0) {
+            Request obj = new Request();
+            obj.setnList(nList1);
+            obj.generateID();
+            obj.setEmail(email);
+            obj.setTimeq();
+            Manager.getInstance().fetchRequests(obj);
+        } else if (cList1.size() > 0) {
+            Request obj = new Request();
+            obj.setcList(cList1);
+            obj.generateID();
+            obj.setEmail(email);
+            obj.setTimeq();
+            Manager.getInstance().fetchRequests(obj);
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Select an Item before sending request");
+        }
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void outTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outTableMouseClicked
@@ -628,23 +699,44 @@ public class EmployeeFrame extends javax.swing.JFrame {
         String input = (String) model.getValueAt(rowIndex, 1);
         //ncObj = Manager.getInstance().getDataN(input);
         searchModel = input;
-        if(consumableRadio.isSelected())
-        {
-        cList1.add( Manager.getInstance().getDataC(input));
+        if (consumableRadio.isSelected()) {
+            cList1.add(Manager.getInstance().getDataC(input));
+        } else if (nonConsumableRadio.isSelected()) {
+            nList1.add(Manager.getInstance().getDataN(input));
         }
-        else if(nonConsumableRadio.isSelected())
-        {
-        nList1.add(Manager.getInstance().getDataN(input));
-        }
-        createSelectedTable(nList1,cList1);
+        createSelectedTable(nList1, cList1);
     }//GEN-LAST:event_outTableMouseClicked
 
     private void selectedTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selectedTableMouseClicked
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) selectedTable.getModel();
         ListSelectionModel m = selectedTable.getSelectionModel();
-        
+        int rowIndex = m.getMinSelectionIndex();
+        selectedModel = (String) model.getValueAt(rowIndex, 1);
+        selectedType = (String) model.getValueAt(rowIndex, 3);
+
     }//GEN-LAST:event_selectedTableMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (selectedType.equals("Non Consumable")) {
+            for (int i = 0; i < nList1.size(); i++) {
+                if (nList1.get(i).getModel().equals(selectedModel)) {
+                    nList1.remove(i);
+                    break;
+                }
+            }
+
+        } else if (selectedType.equals("Consumable")) {
+            for (int i = 0; i < cList1.size(); i++) {
+                if (cList1.get(i).getTag().equals(selectedModel)) {
+                    cList1.remove(i);
+                    break;
+                }
+            }
+        }
+        createSelectedTable(nList1, cList1);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     String[][] ManagerTableDataN(List<NonConsumableAccessories> dataList) {
         int c = 3;
@@ -718,7 +810,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
         String array[][] = new String[r][c];
         String temp = "";
         String input = "";
-        for (int i = 0; i < nList.size(); i++) {   
+        for (int i = 0; i < nList.size(); i++) {
             temp = temp + nList.get(i).getCompanyName() + ",";
             temp = temp + nList.get(i).getModel() + ",";
             temp = temp + nList.get(i).getType() + ",";
@@ -728,33 +820,28 @@ public class EmployeeFrame extends javax.swing.JFrame {
             }
         }
         for (int i = 0; i < cList.size(); i++) {
-             input =  input + cList.get(i).getCompanyName() + ",";            
-             input =  input + cList.get(i).getTag() + ",";
-             input =  input + cList.get(i).getType() + ",";
-             input =  input + "Consumable";
+            input = input + cList.get(i).getCompanyName() + ",";
+            input = input + cList.get(i).getTag() + ",";
+            input = input + cList.get(i).getType() + ",";
+            input = input + "Consumable";
             if (i < cList.size() - 1) {
-                 input =  input+ ",";
+                input = input + ",";
             }
         }
         String out = "";
-        if(!temp.equals("") && (!input.equals("")))
-        {
+        if (!temp.equals("") && (!input.equals(""))) {
             out = temp + "," + input;
-        }
-        else if(!temp.equals(""))
-        {
+        } else if (!temp.equals("")) {
             out = temp;
-        }
-        else if(!input.equals(""))
-        {
+        } else if (!input.equals("")) {
             out = input;
         }
         String arr[] = out.split(",");
         int k = 0;
-       
+
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
-                if (k < arr.length ) {
+                if (k < arr.length) {
                     array[i][j] = arr[k];
                     k++;
                 }
@@ -762,11 +849,10 @@ public class EmployeeFrame extends javax.swing.JFrame {
         }
         return array;
     }
-    
-    void createSelectedTable(List<NonConsumableAccessories> nList, List<ConsumableAccessories> cList)
-    {
-        String [][]rowData = selectedTableData(nList,cList);
-        String[] columnHeader = {"Company","Tag","Item","Type"};
+
+    void createSelectedTable(List<NonConsumableAccessories> nList, List<ConsumableAccessories> cList) {
+        String[][] rowData = selectedTableData(nList, cList);
+        String[] columnHeader = {"Company", "Tag", "Item", "Type"};
         DefaultTableModel model = (DefaultTableModel) selectedTable.getModel();
         model.setDataVector(rowData, columnHeader);
     }

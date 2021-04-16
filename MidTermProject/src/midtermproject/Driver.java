@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package midtermproject;
+
+import java.util.Random;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author DELL
@@ -15,6 +19,15 @@ public class Driver{
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        
+     
+        
+        
+        
+        
+        
+        
         Login form = new Login();
         form.setVisible(true);
         
