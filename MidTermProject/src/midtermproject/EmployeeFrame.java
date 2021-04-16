@@ -4,8 +4,13 @@
  * and open the template in the editor.
  */
 package midtermproject;
-
+import java.util.*;
 import java.awt.Color;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,8 +21,14 @@ public class EmployeeFrame extends javax.swing.JFrame {
     /**
      * Creates new form Employee
      */
+    String searchModel;
+    String selectedModel;
+    List<NonConsumableAccessories>nList1 = new ArrayList<>();
+    List<ConsumableAccessories>cList1 = new ArrayList<>();
     public EmployeeFrame() {
         initComponents();
+        selectedPanel.setVisible(false);
+        outPanel.setVisible(false);
     }
 
     /**
@@ -37,15 +48,20 @@ public class EmployeeFrame extends javax.swing.JFrame {
         adminButton3 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        itemComboBox = new javax.swing.JComboBox<>();
+        consumableRadio = new javax.swing.JRadioButton();
+        nonConsumableRadio = new javax.swing.JRadioButton();
+        selectedPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         selectedTable = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton4 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        outPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         outTable = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -167,6 +183,41 @@ public class EmployeeFrame extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 340, 800));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setText("Selected Items");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+
+        itemComboBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        itemComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel2.add(itemComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(491, 148, 200, -1));
+
+        consumableRadio.setBackground(new java.awt.Color(255, 255, 255));
+        consumableRadio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        consumableRadio.setText("Consumable Item");
+        consumableRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consumableRadioActionPerformed(evt);
+            }
+        });
+        jPanel2.add(consumableRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, -1, -1));
+
+        nonConsumableRadio.setBackground(new java.awt.Color(255, 255, 255));
+        nonConsumableRadio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        nonConsumableRadio.setText("Non Consumable Item");
+        nonConsumableRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nonConsumableRadioActionPerformed(evt);
+            }
+        });
+        jPanel2.add(nonConsumableRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 100, -1, -1));
+
+        selectedPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         selectedTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -176,29 +227,12 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(selectedTable);
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setText("Selected Items");
-
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        outTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
+        selectedTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                selectedTableMouseClicked(evt);
             }
-        ));
-        jScrollPane2.setViewportView(outTable);
-
-        jButton1.setBackground(new java.awt.Color(51, 102, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Remove");
-        jButton1.setFocusable(false);
+        });
+        jScrollPane1.setViewportView(selectedTable);
 
         jButton4.setBackground(new java.awt.Color(51, 102, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -211,6 +245,12 @@ public class EmployeeFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(51, 102, 255));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Remove");
+        jButton1.setFocusable(false);
+
         jButton5.setBackground(new java.awt.Color(51, 102, 255));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
@@ -222,50 +262,89 @@ public class EmployeeFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(jLabel2)
+        javax.swing.GroupLayout selectedPanelLayout = new javax.swing.GroupLayout(selectedPanel);
+        selectedPanel.setLayout(selectedPanelLayout);
+        selectedPanelLayout.setHorizontalGroup(
+            selectedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(selectedPanelLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32))
+            .addGroup(selectedPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addGap(31, 31, 31))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel2)
-                .addGap(34, 34, 34)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+        selectedPanelLayout.setVerticalGroup(
+            selectedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(selectedPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGroup(selectedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
+        jPanel2.add(selectedPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 480, 400));
+
+        outPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        outTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        outTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                outTableMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(outTable);
+
+        javax.swing.GroupLayout outPanelLayout = new javax.swing.GroupLayout(outPanel);
+        outPanel.setLayout(outPanelLayout);
+        outPanelLayout.setHorizontalGroup(
+            outPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(outPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+        outPanelLayout.setVerticalGroup(
+            outPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(outPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(outPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 500, 300));
+
+        jButton9.setBackground(new java.awt.Color(153, 255, 153));
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("Request");
+        jButton9.setFocusable(false);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, -1, 50));
+
         jTabbedPane1.addTab("tab1", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -344,7 +423,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton8))
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,9 +432,9 @@ public class EmployeeFrame extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(32, 32, 32)
                 .addComponent(jLabel4)
-                .addGap(85, 85, 85)
+                .addGap(79, 79, 79)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(47, 47, 47)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -369,7 +448,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 975, Short.MAX_VALUE)
+            .addGap(0, 1045, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,7 +457,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab3", jPanel4);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 980, 800));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1050, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -391,13 +470,13 @@ public class EmployeeFrame extends javax.swing.JFrame {
     private void adminButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButtonMouseEntered
 
         adminButton.setBackground(Color.white);
-        adminButton.setForeground(new Color(0,0,0));
+        adminButton.setForeground(new Color(0, 0, 0));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButtonMouseEntered
 
     private void adminButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButtonMouseExited
-        adminButton.setBackground(new Color( 255,0,51));
-        adminButton.setForeground(new Color(255,255,255));
+        adminButton.setBackground(new Color(255, 0, 51));
+        adminButton.setForeground(new Color(255, 255, 255));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButtonMouseExited
 
@@ -409,13 +488,13 @@ public class EmployeeFrame extends javax.swing.JFrame {
     private void adminButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton1MouseEntered
 
         adminButton1.setBackground(Color.white);
-        adminButton1.setForeground(new Color(0,0,0));
+        adminButton1.setForeground(new Color(0, 0, 0));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton1MouseEntered
 
     private void adminButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton1MouseExited
-        adminButton1.setBackground(new Color( 255,0,51));
-        adminButton1.setForeground(new Color(255,255,255));
+        adminButton1.setBackground(new Color(255, 0, 51));
+        adminButton1.setForeground(new Color(255, 255, 255));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton1MouseExited
 
@@ -426,13 +505,13 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
     private void adminButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton2MouseEntered
         adminButton2.setBackground(Color.white);
-        adminButton2.setForeground(new Color(0,0,0));
+        adminButton2.setForeground(new Color(0, 0, 0));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton2MouseEntered
 
     private void adminButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton2MouseExited
-     adminButton2.setBackground(new Color( 255,0,51));
-        adminButton2.setForeground(new Color(255,255,255));
+        adminButton2.setBackground(new Color(255, 0, 51));
+        adminButton2.setForeground(new Color(255, 255, 255));
 // TODO add your handling code here:
     }//GEN-LAST:event_adminButton2MouseExited
 
@@ -446,20 +525,19 @@ public class EmployeeFrame extends javax.swing.JFrame {
 
     private void adminButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton3MouseClicked
 
-        
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_adminButton3MouseClicked
 
     private void adminButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton3MouseEntered
 
         adminButton3.setBackground(Color.white);
-        adminButton3.setForeground(new Color(0,0,0));
+        adminButton3.setForeground(new Color(0, 0, 0));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton3MouseEntered
 
     private void adminButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton3MouseExited
-       adminButton3.setBackground(new Color( 255,0,51));
-        adminButton3.setForeground(new Color(255,255,255));
+        adminButton3.setBackground(new Color(255, 0, 51));
+        adminButton3.setForeground(new Color(255, 255, 255));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton3MouseExited
 
@@ -472,7 +550,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
         Login form = new Login();
         this.setVisible(false);
         form.setVisible(true);
-            // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_adminButton3ActionPerformed
 
     private void adminButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton1ActionPerformed
@@ -488,6 +566,210 @@ public class EmployeeFrame extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void consumableRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consumableRadioActionPerformed
+        // TODO add your handling code here:
+        nonConsumableRadio.setSelected(false);
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        //  itemComboBox = new JComboBox();
+        model.addElement("None");
+        model.addElement("File");
+        model.addElement("Paper");
+        model.addElement("Pencil");
+        model.addElement("Note Book");
+        model.addElement("Paper Clips");
+        itemComboBox.setModel(model);
+        // String[] array = {"File","Paper","Pencil","NoteBook","Paper Clips"};
+    }//GEN-LAST:event_consumableRadioActionPerformed
+
+    private void nonConsumableRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nonConsumableRadioActionPerformed
+        // TODO add your handling code here:
+        consumableRadio.setSelected(false);
+        //modelLabel.setVisible(false);
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        //  itemComboBox = new JComboBox();
+        model.addElement("None");
+        model.addElement("Laptop");
+        model.addElement("Projector");
+        model.addElement("Chair");
+        model.addElement("Mobile");
+        model.addElement("Computer");
+        itemComboBox.setModel(model);
+        // String[] array = {"File","Paper","Pencil","NoteBook","Paper Clips"};
+    }//GEN-LAST:event_nonConsumableRadioActionPerformed
+
+    private void itemComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemComboBoxActionPerformed
+        // TODO add your handling code here:
+        outPanel.setVisible(true);
+        if (!itemComboBox.getSelectedItem().equals("None")) {
+            String category = (String) itemComboBox.getSelectedItem();
+            //JOptionPane.showMessageDialog(null,category);
+            if (consumableRadio.isSelected()) {
+                List<ConsumableAccessories> strList = Manager.getInstance().viewByCategoryC(category);
+                createManagerTableC(strList);
+            } else if (nonConsumableRadio.isSelected()) {
+                List<NonConsumableAccessories> strList = Manager.getInstance().viewByCategoryN(category);
+                createManagerTableN(strList);
+            }
+        }
+    }//GEN-LAST:event_itemComboBoxActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void outTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outTableMouseClicked
+        // TODO add your handling code here:
+        selectedPanel.setVisible(true);
+        // TODO add your handling code here:
+        ListSelectionModel m = outTable.getSelectionModel();
+        DefaultTableModel model = (DefaultTableModel) outTable.getModel();
+        int rowIndex = m.getMinSelectionIndex();
+        String input = (String) model.getValueAt(rowIndex, 1);
+        //ncObj = Manager.getInstance().getDataN(input);
+        searchModel = input;
+        if(consumableRadio.isSelected())
+        {
+        cList1.add( Manager.getInstance().getDataC(input));
+        }
+        else if(nonConsumableRadio.isSelected())
+        {
+        nList1.add(Manager.getInstance().getDataN(input));
+        }
+        createSelectedTable(nList1,cList1);
+    }//GEN-LAST:event_outTableMouseClicked
+
+    private void selectedTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selectedTableMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) selectedTable.getModel();
+        ListSelectionModel m = selectedTable.getSelectionModel();
+        
+    }//GEN-LAST:event_selectedTableMouseClicked
+
+    String[][] ManagerTableDataN(List<NonConsumableAccessories> dataList) {
+        int c = 3;
+        int r = dataList.size();
+        String[][] array = new String[r][c];
+        String temp = "";
+        for (int i = 0; i < dataList.size(); i++) {
+            temp = temp + dataList.get(i).getCompanyName() + ",";
+            temp = temp + dataList.get(i).getModel() + ",";
+            temp = temp + dataList.get(i).getStatus();
+            if (i < dataList.size() - 1) {
+                temp = temp + ",";
+            }
+        }
+        String arr[] = temp.split(",");
+        int k = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (k < arr.length) {
+                    array[i][j] = arr[k];
+                    k++;
+                }
+            }
+        }
+        return array;
+    }
+
+    String[][] ManagerTableDataC(List<ConsumableAccessories> dataList) {
+        int c = 3;
+        int r = dataList.size();
+        String[][] array = new String[r][c];
+        String temp = "";
+        for (int i = 0; i < dataList.size(); i++) {
+            temp = temp + dataList.get(i).getCompanyName() + ",";
+            temp = temp + dataList.get(i).getTag() + ",";
+            temp = temp + dataList.get(i).getStatus();
+            if (i < dataList.size() - 1) {
+                temp = temp + ",";
+            }
+        }
+        String arr[] = temp.split(",");
+        int k = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (k < arr.length) {
+                    array[i][j] = arr[k];
+                    k++;
+                }
+            }
+        }
+        return array;
+    }
+
+    void createManagerTableN(List<NonConsumableAccessories> dataList) {
+        String[][] rowData = ManagerTableDataN(dataList);
+        String[] colHeader = {"Company Name", "Model", "Status"};
+        DefaultTableModel model = (DefaultTableModel) outTable.getModel();
+        model.setDataVector(rowData, colHeader);
+    }
+
+    void createManagerTableC(List<ConsumableAccessories> dataList) {
+        String[][] rowData = ManagerTableDataC(dataList);
+        String[] colHeader = {"Company Name", "Tag No.", "Status"};
+        DefaultTableModel model = (DefaultTableModel) outTable.getModel();
+        model.setDataVector(rowData, colHeader);
+    }
+
+    String[][] selectedTableData(List<NonConsumableAccessories> nList, List<ConsumableAccessories> cList) {
+        int r = nList.size() + cList.size();
+        int c = 4;
+        String array[][] = new String[r][c];
+        String temp = "";
+        String input = "";
+        for (int i = 0; i < nList.size(); i++) {   
+            temp = temp + nList.get(i).getCompanyName() + ",";
+            temp = temp + nList.get(i).getModel() + ",";
+            temp = temp + nList.get(i).getType() + ",";
+            temp = temp + "Non Consumable";
+            if (i < nList.size() - 1) {
+                temp = temp + ",";
+            }
+        }
+        for (int i = 0; i < cList.size(); i++) {
+             input =  input + cList.get(i).getCompanyName() + ",";            
+             input =  input + cList.get(i).getTag() + ",";
+             input =  input + cList.get(i).getType() + ",";
+             input =  input + "Consumable";
+            if (i < cList.size() - 1) {
+                 input =  input+ ",";
+            }
+        }
+        String out = "";
+        if(!temp.equals("") && (!input.equals("")))
+        {
+            out = temp + "," + input;
+        }
+        else if(!temp.equals(""))
+        {
+            out = temp;
+        }
+        else if(!input.equals(""))
+        {
+            out = input;
+        }
+        String arr[] = out.split(",");
+        int k = 0;
+       
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (k < arr.length ) {
+                    array[i][j] = arr[k];
+                    k++;
+                }
+            }
+        }
+        return array;
+    }
+    
+    void createSelectedTable(List<NonConsumableAccessories> nList, List<ConsumableAccessories> cList)
+    {
+        String [][]rowData = selectedTableData(nList,cList);
+        String[] columnHeader = {"Company","Tag","Item","Type"};
+        DefaultTableModel model = (DefaultTableModel) selectedTable.getModel();
+        model.setDataVector(rowData, columnHeader);
+    }
 
     /**
      * @param args the command line arguments
@@ -529,13 +811,15 @@ public class EmployeeFrame extends javax.swing.JFrame {
     private javax.swing.JButton adminButton1;
     private javax.swing.JButton adminButton2;
     private javax.swing.JButton adminButton3;
+    private javax.swing.JRadioButton consumableRadio;
+    private javax.swing.JComboBox<String> itemComboBox;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -549,7 +833,10 @@ public class EmployeeFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable3;
+    private javax.swing.JRadioButton nonConsumableRadio;
+    private javax.swing.JPanel outPanel;
     private javax.swing.JTable outTable;
+    private javax.swing.JPanel selectedPanel;
     private javax.swing.JTable selectedTable;
     // End of variables declaration//GEN-END:variables
 }

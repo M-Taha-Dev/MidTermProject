@@ -5,8 +5,8 @@
  */
 package midtermproject;
 
-import java.security.Timestamp;
-
+import java.sql.Timestamp;
+import java.util.Date;
 /**
  *
  * @author DELL
@@ -18,7 +18,12 @@ public class NonConsumableAccessories {
     private String yearOfManufacture;
     private String status;
     private Timestamp Time;
+    private String manufactureYear;
 
+    public NonConsumableAccessories()
+    {
+        this.status = "Unoccupied";
+    }
     public String getCompanyName() {
         return companyName;
     }
@@ -64,7 +69,9 @@ public class NonConsumableAccessories {
     }
 
     public void setTime(Timestamp Time) {
-        this.Time = Time;
+        Date date = new Date();
+        Timestamp dt = new Timestamp(date.getTime());
+        this.Time = dt;
     }
     
 }

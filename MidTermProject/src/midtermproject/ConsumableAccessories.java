@@ -15,7 +15,29 @@ public class ConsumableAccessories {
     private String Type;
     private String status;
     private Timestamp Time;
+    private String companyName;
+    private String tag;
+    public ConsumableAccessories()
+    {
+        this.status = "Unoccupied";
+    }
 
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+    
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+    
     public String getType() {
         return Type;
     }

@@ -6,7 +6,12 @@
 package midtermproject;
 
 import java.awt.Color;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import java.util.*;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,9 +22,18 @@ public class ManagerFrame extends javax.swing.JFrame {
     /**
      * Creates new form ManagerFrame
      */
+    NonConsumableAccessories ncObj = new NonConsumableAccessories();
+    ConsumableAccessories cObj = new ConsumableAccessories();
+    String searchModel;
+
     public ManagerFrame() {
         initComponents();
-     
+        searchField.setVisible(false);
+        searchButton.setVisible(false);
+        homeCompanyRadio.setVisible(false);
+        homeModelRadio.setVisible(false);
+        homePanel.setVisible(false);
+
     }
 
     /**
@@ -40,13 +54,30 @@ public class ManagerFrame extends javax.swing.JFrame {
         adminButton5 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        searchField = new javax.swing.JTextField();
+        viewButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        managerTable = new javax.swing.JTable();
+        deleteButton = new javax.swing.JButton();
+        actionButton = new javax.swing.JButton();
+        nonConsumableHome = new javax.swing.JRadioButton();
+        consumableHome = new javax.swing.JRadioButton();
+        homeComboBox = new javax.swing.JComboBox<>();
+        searchButton = new javax.swing.JButton();
+        homePanel = new javax.swing.JPanel();
+        editButton = new javax.swing.JButton();
+        categoryName = new javax.swing.JTextField();
+        homeYear = new javax.swing.JTextField();
+        homeCompanyName = new javax.swing.JTextField();
+        homeModel = new javax.swing.JTextField();
+        categoryLabel = new javax.swing.JLabel();
+        homeModelLabel = new javax.swing.JLabel();
+        homeNameLabel = new javax.swing.JLabel();
+        homeYearLabel = new javax.swing.JLabel();
+        itemName = new javax.swing.JTextField();
+        categoryLabel1 = new javax.swing.JLabel();
+        homeModelRadio = new javax.swing.JRadioButton();
+        homeCompanyRadio = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -196,22 +227,26 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 340, 800));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        searchField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        searchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                searchFieldActionPerformed(evt);
             }
         });
+        jPanel2.add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 240, 340, 57));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton1.setText("Search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        viewButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        viewButton.setText("View");
+        viewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                viewButtonActionPerformed(evt);
             }
         });
+        jPanel2.add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 630, 136, 57));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        managerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -219,73 +254,179 @@ public class ManagerFrame extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        managerTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                managerTableMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(managerTable);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setText("Search");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 380, 490, 213));
+
+        deleteButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                deleteButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 630, 136, 57));
+
+        actionButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        actionButton.setText("By Search");
+        actionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(actionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 160, 160, 57));
+
+        nonConsumableHome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        nonConsumableHome.setText("Non Consumable Item");
+        nonConsumableHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nonConsumableHomeActionPerformed(evt);
+            }
+        });
+        jPanel2.add(nonConsumableHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, -1, -1));
+
+        consumableHome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        consumableHome.setText("Consumable Item");
+        consumableHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consumableHomeActionPerformed(evt);
+            }
+        });
+        jPanel2.add(consumableHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 90, -1, -1));
+
+        homeComboBox.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        homeComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel2.add(homeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, 260, -1));
+
+        searchButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        searchButton.setText("Search");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 240, 136, 57));
+
+        editButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        editButton.setText("Edit");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton3.setText("Search");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
+        categoryName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton4.setText("Search");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
+        homeYear.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(128, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap(655, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(94, 94, 94)))
+        homeCompanyName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        homeModel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        categoryLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        categoryLabel.setText("Item");
+
+        homeModelLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        homeModelLabel.setText("Model");
+
+        homeNameLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        homeNameLabel.setText("Company Name");
+
+        homeYearLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        homeYearLabel.setText("Date Of Manufacture");
+
+        itemName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        categoryLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        categoryLabel1.setText("Category");
+
+        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
+        homePanel.setLayout(homePanelLayout);
+        homePanelLayout.setHorizontalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addComponent(homeModelLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(homeModel, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addComponent(homeNameLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(homeCompanyName, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addComponent(homeYearLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(homeYear, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addComponent(categoryLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(categoryName, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addComponent(categoryLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                .addGap(86, 86, 86)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE))
-                .addGap(154, 154, 154))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(198, 198, 198)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                    .addGap(515, 515, 515)))
+        homePanelLayout.setVerticalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
+                .addContainerGap(52, Short.MAX_VALUE)
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(categoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(categoryName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(categoryLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(homeCompanyName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(homeNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(homeModel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(homeModelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(homeYear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(homeYearLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
+
+        jPanel2.add(homePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 490, 440));
+
+        homeModelRadio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        homeModelRadio.setText("Model");
+        homeModelRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeModelRadioActionPerformed(evt);
+            }
+        });
+        jPanel2.add(homeModelRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 320, -1, -1));
+
+        homeCompanyRadio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        homeCompanyRadio.setText("Company Name");
+        homeCompanyRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeCompanyRadioActionPerformed(evt);
+            }
+        });
+        jPanel2.add(homeCompanyRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, -1, -1));
 
         jTabbedPane1.addTab("tab1", jPanel2);
 
@@ -293,7 +434,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 885, Short.MAX_VALUE)
+            .addGap(0, 1115, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,7 +447,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 885, Short.MAX_VALUE)
+            .addGap(0, 1115, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,11 +506,16 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton5.setText("Done");
-        jPanel5.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 639, 112, 53));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 610, 112, 53));
 
         jTabbedPane1.addTab("tab4", jPanel5);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 890, 800));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1120, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -382,13 +528,13 @@ public class ManagerFrame extends javax.swing.JFrame {
     private void adminButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton1MouseEntered
 
         adminButton1.setBackground(Color.white);
-        adminButton1.setForeground(new Color(0,0,0));
+        adminButton1.setForeground(new Color(0, 0, 0));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton1MouseEntered
 
     private void adminButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton1MouseExited
-        adminButton1.setBackground(new Color( 255,0,51));
-        adminButton1.setForeground(new Color(255,255,255));
+        adminButton1.setBackground(new Color(255, 0, 51));
+        adminButton1.setForeground(new Color(255, 255, 255));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton1MouseExited
 
@@ -404,18 +550,18 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void adminButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton2MouseEntered
         adminButton2.setBackground(Color.white);
-        adminButton2.setForeground(new Color(0,0,0));
+        adminButton2.setForeground(new Color(0, 0, 0));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton2MouseEntered
 
     private void adminButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton2MouseExited
-        adminButton2.setBackground(new Color( 255,0,51));
-        adminButton2.setForeground(new Color(255,255,255));
+        adminButton2.setBackground(new Color(255, 0, 51));
+        adminButton2.setForeground(new Color(255, 255, 255));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton2MouseExited
 
     private void adminButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton2ActionPerformed
-        jTabbedPane1.setSelectedIndex(1);
+        jTabbedPane1.setSelectedIndex(3);
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton2ActionPerformed
 
@@ -427,13 +573,13 @@ public class ManagerFrame extends javax.swing.JFrame {
     private void adminButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton3MouseEntered
 
         adminButton3.setBackground(Color.white);
-        adminButton3.setForeground(new Color(0,0,0));
+        adminButton3.setForeground(new Color(0, 0, 0));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton3MouseEntered
 
     private void adminButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton3MouseExited
-        adminButton3.setBackground(new Color( 255,0,51));
-        adminButton3.setForeground(new Color(255,255,255));
+        adminButton3.setBackground(new Color(255, 0, 51));
+        adminButton3.setForeground(new Color(255, 255, 255));
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton3MouseExited
 
@@ -457,6 +603,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void adminButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton4ActionPerformed
         // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_adminButton4ActionPerformed
 
     private void adminButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton5MouseClicked
@@ -473,58 +620,351 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void adminButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton5ActionPerformed
         // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_adminButton5ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_searchFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
+        homePanel.setVisible(true);
+        if (nonConsumableHome.isSelected()) {
+            showDataN();
+        } else if (consumableHome.isSelected()) {
+            showDataC();
+        }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_viewButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        if (editButton.getText().equals("Edit")) {
+            //itemName.setEditable(true);
+            categoryName.setEditable(true);
+            homeCompanyName.setEditable(true);
+            homeModel.setEditable(true);
+            homeYear.setEditable(true);
+            editButton.setText("Save");
+        } else if (editButton.getText().equals("Save")) {
+            String item = itemName.getText();
+            String name = categoryName.getText();
+            String company = homeCompanyName.getText();
+            String model = homeModel.getText();
+            String year = homeYear.getText();
+            if (item.equals("Non Consumable")) {
+                NonConsumableAccessories obj = new NonConsumableAccessories();
+                obj.setCompanyName(company);
+                obj.setModel(model);
+                obj.setYearOfManufacture(year);
+                obj.setType(name);
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+                boolean check = Manager.getInstance().editNonConsumableAccessories(obj, searchModel);
+                JOptionPane.showMessageDialog(null, check);
+            } else if (item.equals("Consumable")) {
+                ConsumableAccessories obj = new ConsumableAccessories();
+                obj.setCompanyName(company);
+                obj.setTag(model);
+                //obj.setYearOfManufacture(year);
+                obj.setType(name);
+                Manager.getInstance().editConsumableAccessories(obj, searchModel);
+            }
+            editButton.setText("Edit");
+            homePanel.setVisible(false);
+            itemName.setText("");
+            categoryName.setText("");
+            homeCompanyName.setText("");
+            homeModel.setText("");
+            homeYear.setText("");
+        }
+    }//GEN-LAST:event_editButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        if (consumableHome.isSelected()) {
+            boolean flag = Manager.getInstance().deleteConsumableAccessories(searchModel);
+            if (flag) {
+                JOptionPane.showMessageDialog(null, "Deleted Successfully");
+            } else {
+                JOptionPane.showMessageDialog(null, "Unable to complete the operation");
+            }
+        } else if (nonConsumableHome.isSelected()) {
+            boolean flag = Manager.getInstance().deleteNonConsumableAccessories(searchModel);
+            if (flag) {
+                JOptionPane.showMessageDialog(null, "Deleted Successfully");
+            } else {
+                JOptionPane.showMessageDialog(null, "Unable to complete the operation");
+            }
+        }
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void actionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionButtonActionPerformed
+        // TODO add your handling code here:
+        if (actionButton.getText().equals("By Search")) {
+            searchField.setVisible(true);
+            searchButton.setVisible(true);
+            actionButton.setText("By List");
+            homeComboBox.setVisible(false);
+            homeCompanyRadio.setVisible(true);
+            if (!homeModelRadio.isShowing() && nonConsumableHome.isSelected()) {
+                homeModelRadio.setVisible(true);
+            }
+        } else if (actionButton.getText().equals("By List")) {
+            searchField.setVisible(false);
+            searchButton.setVisible(false);
+            actionButton.setText("By Search");
+            homeComboBox.setVisible(true);
+            homeCompanyRadio.setVisible(false);
+
+            homeModelRadio.setVisible(false);
+
+        }
+
+    }//GEN-LAST:event_actionButtonActionPerformed
 
     private void nonConsumableRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nonConsumableRadioActionPerformed
         // TODO add your handling code here:
+        modelLabel.setText("Model");
         consumableRadio.setSelected(false);
         modelLabel.setVisible(true);
         yearLabel.setVisible(true);
         modelField.setVisible(true);
         yearField.setVisible(true);
-      //  itemComboBox = new JComboBox();
-        itemComboBox.addItem("Laptop");
-        itemComboBox.addItem("Projector");
-        itemComboBox.addItem("Chair");
-        itemComboBox.addItem("Mobile");
-        itemComboBox.addItem("Computer");
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        //  itemComboBox = new JComboBox();
+        model.addElement("Laptop");
+        model.addElement("Projector");
+        model.addElement("Chair");
+        model.addElement("Mobile");
+        model.addElement("Computer");
+        itemComboBox.setModel(model);
+        //String[] array = {"Laptop","Projector","Chair","Mobile","Computer"};
+        //itemComboBox = new JComboBox(array);
     }//GEN-LAST:event_nonConsumableRadioActionPerformed
 
     private void consumableRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consumableRadioActionPerformed
         // TODO add your handling code here:
         nonConsumableRadio.setSelected(false);
-        modelLabel.setVisible(false);
+        //modelLabel.setVisible(false);
+        modelLabel.setText("Tag");
         yearLabel.setVisible(false);
-        modelField.setVisible(false);
+        // modelField.setVisible(false);
         yearField.setVisible(false);
-      //  itemComboBox = new JComboBox();
-        itemComboBox.addItem("File");
-        itemComboBox.addItem("Paper");
-        itemComboBox.addItem("Pencil");
-        itemComboBox.addItem("NoteBook");
-        itemComboBox.addItem("File Holder");
-        
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        //  itemComboBox = new JComboBox();
+        model.addElement("File");
+        model.addElement("Paper");
+        model.addElement("Pencil");
+        model.addElement("Note Book");
+        model.addElement("Paper Clips");
+        itemComboBox.setModel(model);
+        // String[] array = {"File","Paper","Pencil","NoteBook","Paper Clips"};
+
     }//GEN-LAST:event_consumableRadioActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        if (nonConsumableRadio.isSelected()) {
+            String Type = (String) itemComboBox.getSelectedItem();
+            String cName = companyName.getText();
+            String year = yearField.getText();
+            String model = modelField.getText();
+            NonConsumableAccessories obj = new NonConsumableAccessories();
+            obj.setModel(model);
+            obj.setType(Type);
+            obj.setCompanyName(cName);
+            obj.setYearOfManufacture(year);
+            boolean check = Manager.getInstance().addNonConsumableAccessories(obj);
+            if (check) {
+                JOptionPane.showMessageDialog(null, "Saved successfully");
+            } else {
+                JOptionPane.showMessageDialog(null, "unable to save data");
+            }
+        } else if (consumableRadio.isSelected()) {
+            String Type = (String) itemComboBox.getSelectedItem();
+            String cName = companyName.getText();
+            ConsumableAccessories obj = new ConsumableAccessories();
+            obj.setCompanyName(cName);
+            obj.setType(Type);
+            boolean check = Manager.getInstance().addConsumableAccessories(obj);
+            if (check) {
+                JOptionPane.showMessageDialog(null, "Saved successfully");
+            } else {
+                JOptionPane.showMessageDialog(null, "unable to save data");
+            }
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void nonConsumableHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nonConsumableHomeActionPerformed
+        // TODO add your handling code here:
+        if (actionButton.getText().equals("By List")) {
+            homeModelRadio.setVisible(true);
+        } else {
+            homeModelRadio.setVisible(false);
+        }
+        consumableHome.setSelected(false);
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        model.addElement("None");
+        model.addElement("Laptop");
+        model.addElement("Projector");
+        model.addElement("Chair");
+        model.addElement("Mobile");
+        model.addElement("Computer");
+        homeComboBox.setModel(model);
+    }//GEN-LAST:event_nonConsumableHomeActionPerformed
+
+    private void consumableHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consumableHomeActionPerformed
+        // TODO add your handling code here:
+        homeModelRadio.setVisible(false);
+        nonConsumableHome.setSelected(false);
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        model.addElement("None");
+        model.addElement("File");
+        model.addElement("Paper");
+        model.addElement("Pencil");
+        model.addElement("Note Book");
+        model.addElement("Paper Clips");
+        homeComboBox.setModel(model);
+    }//GEN-LAST:event_consumableHomeActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void homeModelRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeModelRadioActionPerformed
+        // TODO add your handling code here:
+        homeCompanyRadio.setSelected(false);
+    }//GEN-LAST:event_homeModelRadioActionPerformed
+
+    private void homeCompanyRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeCompanyRadioActionPerformed
+        // TODO add your handling code here:
+        homeModelRadio.setSelected(false);
+    }//GEN-LAST:event_homeCompanyRadioActionPerformed
+
+    private void homeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeComboBoxActionPerformed
+        // TODO add your handling code here:
+        if (!homeComboBox.getSelectedItem().equals("None")) {
+            String category = (String) homeComboBox.getSelectedItem();
+            //JOptionPane.showMessageDialog(null,category);
+            if (consumableHome.isSelected()) {
+                List<ConsumableAccessories> strList = Manager.getInstance().viewByCategoryC(category);
+                createManagerTableC(strList);
+            } else if (nonConsumableHome.isSelected()) {
+                List<NonConsumableAccessories> strList = Manager.getInstance().viewByCategoryN(category);
+                createManagerTableN(strList);
+            }
+        }
+    }//GEN-LAST:event_homeComboBoxActionPerformed
+
+    private void managerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managerTableMouseClicked
+        // TODO add your handling code here:
+        ListSelectionModel m = managerTable.getSelectionModel();
+        DefaultTableModel model = (DefaultTableModel) managerTable.getModel();
+        int rowIndex = m.getMinSelectionIndex();
+        String input = (String) model.getValueAt(rowIndex, 1);
+        if (nonConsumableHome.isSelected()) {
+            ncObj = Manager.getInstance().getDataN(input);
+        } else if (consumableHome.isSelected()) {
+            cObj = Manager.getInstance().getDataC(input);
+        }
+        searchModel = input;
+
+    }//GEN-LAST:event_managerTableMouseClicked
+
+    void showDataN() {
+        //homePanel.setVisible(true);
+        itemName.setText("Non Consumable");
+        categoryName.setText(ncObj.getType());
+        homeCompanyName.setText(ncObj.getCompanyName());
+        homeModel.setText(ncObj.getModel());
+        homeYear.setText(ncObj.getYearOfManufacture());
+        itemName.setEditable(false);
+        categoryName.setEditable(false);
+        homeCompanyName.setEditable(false);
+        homeModel.setEditable(false);
+        homeYear.setEditable(false);
+    }
+
+    void showDataC() {
+        //homePanel.setVisible(true);
+        itemName.setText("Consumable");
+        categoryName.setText(cObj.getType());
+        homeCompanyName.setText(cObj.getCompanyName());
+        homeModel.setText(cObj.getTag());
+        //homeYear.setText(cObj.getTime());
+        itemName.setEditable(false);
+        categoryName.setEditable(false);
+        homeCompanyName.setEditable(false);
+        homeModel.setEditable(false);
+        homeYear.setEditable(false);
+    }
+
+    String[][] ManagerTableDataN(List<NonConsumableAccessories> dataList) {
+        int c = 3;
+        int r = dataList.size();
+        String[][] array = new String[r][c];
+        String temp = "";
+        for (int i = 0; i < dataList.size(); i++) {
+            temp = temp + dataList.get(i).getCompanyName() + ",";
+            temp = temp + dataList.get(i).getModel() + ",";
+            temp = temp + dataList.get(i).getStatus();
+            if (i < dataList.size() - 1) {
+                temp = temp + ",";
+            }
+        }
+        String arr[] = temp.split(",");
+        int k = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (k < arr.length) {
+                    array[i][j] = arr[k];
+                    k++;
+                }
+            }
+        }
+        return array;
+    }
+
+    String[][] ManagerTableDataC(List<ConsumableAccessories> dataList) {
+        int c = 3;
+        int r = dataList.size();
+        String[][] array = new String[r][c];
+        String temp = "";
+        for (int i = 0; i < dataList.size(); i++) {
+            temp = temp + dataList.get(i).getCompanyName() + ",";
+            temp = temp + dataList.get(i).getTag() + ",";
+            temp = temp + dataList.get(i).getStatus();
+            if (i < dataList.size() - 1) {
+                temp = temp + ",";
+            }
+        }
+        String arr[] = temp.split(",");
+        int k = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (k < arr.length) {
+                    array[i][j] = arr[k];
+                    k++;
+                }
+            }
+        }
+        return array;
+    }
+
+    void createManagerTableN(List<NonConsumableAccessories> dataList) {
+        String[][] rowData = ManagerTableDataN(dataList);
+        String[] colHeader = {"Company Name", "Model", "Status"};
+        DefaultTableModel model = (DefaultTableModel) managerTable.getModel();
+        model.setDataVector(rowData, colHeader);
+    }
+
+    void createManagerTableC(List<ConsumableAccessories> dataList) {
+        String[][] rowData = ManagerTableDataC(dataList);
+        String[] colHeader = {"Company Name", "Tag No.", "Status"};
+        DefaultTableModel model = (DefaultTableModel) managerTable.getModel();
+        model.setDataVector(rowData, colHeader);
+    }
 
     /**
      * @param args the command line arguments
@@ -543,13 +983,17 @@ public class ManagerFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ManagerFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManagerFrame.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ManagerFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManagerFrame.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ManagerFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManagerFrame.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ManagerFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManagerFrame.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -562,18 +1006,32 @@ public class ManagerFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actionButton;
     private javax.swing.JButton adminButton1;
     private javax.swing.JButton adminButton2;
     private javax.swing.JButton adminButton3;
     private javax.swing.JButton adminButton4;
     private javax.swing.JButton adminButton5;
+    private javax.swing.JLabel categoryLabel;
+    private javax.swing.JLabel categoryLabel1;
+    private javax.swing.JTextField categoryName;
     private javax.swing.JTextField companyName;
+    private javax.swing.JRadioButton consumableHome;
     private javax.swing.JRadioButton consumableRadio;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton editButton;
+    private javax.swing.JComboBox<String> homeComboBox;
+    private javax.swing.JTextField homeCompanyName;
+    private javax.swing.JRadioButton homeCompanyRadio;
+    private javax.swing.JTextField homeModel;
+    private javax.swing.JLabel homeModelLabel;
+    private javax.swing.JRadioButton homeModelRadio;
+    private javax.swing.JLabel homeNameLabel;
+    private javax.swing.JPanel homePanel;
+    private javax.swing.JTextField homeYear;
+    private javax.swing.JLabel homeYearLabel;
     private javax.swing.JComboBox<String> itemComboBox;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JTextField itemName;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -584,12 +1042,15 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable managerTable;
     private javax.swing.JTextField modelField;
     private javax.swing.JLabel modelLabel;
     private javax.swing.JLabel nameLabel;
+    private javax.swing.JRadioButton nonConsumableHome;
     private javax.swing.JRadioButton nonConsumableRadio;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTextField searchField;
+    private javax.swing.JButton viewButton;
     private javax.swing.JTextField yearField;
     private javax.swing.JLabel yearLabel;
     // End of variables declaration//GEN-END:variables
