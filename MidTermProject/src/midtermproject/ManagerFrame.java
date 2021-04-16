@@ -6,6 +6,8 @@
 package midtermproject;
 
 import java.awt.Color;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -1126,8 +1128,9 @@ public class ManagerFrame extends javax.swing.JFrame {
         Receipt rec = new Receipt();
         if(check)
         {
-            rec = Manager.getInstance().createReceipt(id);
+//            rec = Manager.getInstance().createReceipt(id);
             Manager.getInstance().addReceipt(rec);
+            createReceipt(id);
             JOptionPane.showMessageDialog(null,"Operation Successful");
         }
         else
@@ -1141,6 +1144,62 @@ public class ManagerFrame extends javax.swing.JFrame {
         requestPanel.setVisible(false);
     }//GEN-LAST:event_acceptButtonActionPerformed
 
+    void createReceipt(String id) 
+    {
+        Request obj = Manager.getInstance().searchReqID(id);
+        List<NonConsumableAccessories>nList = obj.getnList();
+        List<ConsumableAccessories>cList = obj.getcList();
+        try{
+        FileWriter fr = new FileWriter("Receipt.txt");
+        String out1 = String.format("Employee Name: Name" + "\n" + "Email: Email" +  "\n"+  "Phone Number: 000000000000 " + "\n");
+        String input = "";
+        String temp = "";
+         for (int i = 0; i < nList.size(); i++) {
+            temp = temp + nList.get(i).getCompanyName() + ",";
+            temp = temp + nList.get(i).getModel() + ",";
+            temp = temp + nList.get(i).getType() + ",";
+            temp = temp + "Non Consumable";
+            if (i < nList.size() - 1) {
+                temp = temp + ",";
+            }
+        }
+        for (int i = 0; i < cList.size(); i++) {
+            input = input + cList.get(i).getCompanyName() + ",";
+            input = input + cList.get(i).getTag() + ",";
+            input = input + cList.get(i).getType() + ",";
+            input = input + "Consumable";
+            if (i < cList.size() - 1) {
+                input = input + ",";
+            }
+            
+        }
+        String out = "";
+        if (!temp.equals("") && (!input.equals(""))) {
+            out = temp + "," + input;
+        } else if (!temp.equals("")) {
+            out = temp;
+        } else if (!input.equals("")) {
+            out = input;
+        }
+        out1 = out1 + "," + out;
+        fr.write(out1);
+        fr.flush();
+        fr.close();
+        }
+        catch(Exception ex)
+        {
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     private void rejectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectButtonActionPerformed
         // TODO add your handling code here:
         String id = reqIDField.getText();
