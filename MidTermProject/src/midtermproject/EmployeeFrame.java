@@ -85,8 +85,6 @@ public class EmployeeFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         requestPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -394,26 +392,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
         });
         jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 540, 104, 50));
 
-        jButton7.setBackground(new java.awt.Color(51, 102, 255));
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Remove");
-        jButton7.setFocusable(false);
-        jPanel3.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, -1, 50));
-
-        jButton8.setBackground(new java.awt.Color(51, 102, 255));
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Remove All");
-        jButton8.setFocusable(false);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 540, -1, 50));
-
-        requestPanel.setBackground(new java.awt.Color(204, 255, 255));
+        requestPanel.setBackground(new java.awt.Color(255, 255, 255));
         requestPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -518,10 +497,6 @@ public class EmployeeFrame extends javax.swing.JFrame {
         nList1 = new ArrayList<>();
         createSelectedTable(nList1, cList1);
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void adminButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton3MouseClicked
 
@@ -1034,8 +1009,6 @@ public class EmployeeFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

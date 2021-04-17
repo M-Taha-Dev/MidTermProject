@@ -390,7 +390,7 @@ public class Manager extends Accessories {
                 obj.setCompanyName(arr[2]);
                 obj.setTag(arr[3]);
                 cList.add(obj);
-                //obj.setTime(Timestamp.valueOf(arr[4]));
+                obj.setTime(Timestamp.valueOf(arr[4]));
             }
             line = br.readLine();
         }

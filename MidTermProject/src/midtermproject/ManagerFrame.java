@@ -43,6 +43,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         requestPanel1.setVisible(false);
         managerTable.setOpaque(false);
         generateButton.setVisible(false);
+        viewButton1.setVisible(false);
         //Manager.getInstance().fetchRequests(strList);
     }
 
@@ -92,8 +93,6 @@ public class ManagerFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         requestTable = new javax.swing.JTable();
         viewButton1 = new javax.swing.JButton();
-        rejectAllButton = new javax.swing.JButton();
-        acceptAllButton = new javax.swing.JButton();
         requestPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -516,25 +515,7 @@ public class ManagerFrame extends javax.swing.JFrame {
                 viewButton1ActionPerformed(evt);
             }
         });
-        jPanel3.add(viewButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 530, 136, 57));
-
-        rejectAllButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        rejectAllButton.setText("Reject All");
-        rejectAllButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rejectAllButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(rejectAllButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 530, -1, 57));
-
-        acceptAllButton.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        acceptAllButton.setText("Accept All");
-        acceptAllButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                acceptAllButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(acceptAllButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 150, 57));
+        jPanel3.add(viewButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 530, 136, 57));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Request ID: ");
@@ -1258,16 +1239,9 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_viewButton1ActionPerformed
 
-    private void rejectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectAllButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rejectAllButtonActionPerformed
-
-    private void acceptAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptAllButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_acceptAllButtonActionPerformed
-
     private void requestTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_requestTableMouseClicked
         // TODO add your handling code here:
+        
         ListSelectionModel m = requestTable.getSelectionModel();
         DefaultTableModel model = (DefaultTableModel) requestTable.getModel();
         int rowIndex = m.getMinSelectionIndex();
@@ -1276,10 +1250,12 @@ public class ManagerFrame extends javax.swing.JFrame {
         Request reqObj = Manager.getInstance().searchReqID(reqID);
         Employee empObj = Admin.getInstance().viewEmployee(email);
         showEmployeeRequest(empObj, reqObj);
+        viewButton1.setVisible(false);
     }//GEN-LAST:event_requestTableMouseClicked
 
     private void acceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptButtonActionPerformed
         // TODO add your handling code here:
+        viewButton1.setVisible(true);
         String id = reqIDField.getText();
         Request obj = Manager.getInstance().searchReqID(id);
         boolean check = Manager.getInstance().acceptRequest(obj);
@@ -1356,6 +1332,7 @@ public class ManagerFrame extends javax.swing.JFrame {
     }
     private void rejectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectButtonActionPerformed
         // TODO add your handling code here:
+        viewButton1.setVisible(true);
         String id = reqIDField.getText();
         Request obj = Manager.getInstance().searchReqID(id);
         boolean check = Manager.getInstance().rejectRequest(obj);
@@ -1702,7 +1679,6 @@ public class ManagerFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton acceptAllButton;
     private javax.swing.JButton acceptButton;
     private javax.swing.JButton actionButton;
     private javax.swing.JButton adminButton1;
@@ -1776,7 +1752,6 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JLabel nameLabel;
     private javax.swing.JRadioButton nonConsumableHome;
     private javax.swing.JRadioButton nonConsumableRadio;
-    private javax.swing.JButton rejectAllButton;
     private javax.swing.JButton rejectButton;
     private javax.swing.JTextField reqIDField;
     private javax.swing.JTextField reqIDField1;
