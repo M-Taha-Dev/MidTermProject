@@ -14,6 +14,7 @@ Non Consumable,Laptop,HP,Spectre,2021-04-10 18:26:31.078
 Non Consumable,Projector,Acer,uMM-123,2021-04-14 18:26:31.078
 Non Consumable,Laptop,HP,Spectre,2021-04-10 18:26:31.078
 Non Consumable,Projector,Acer,TYM-123,2021-04-14 18:26:31.078
+Non Consumable,Laptop,asc,AAA-3215,2021-04-13 20:14:48.717
 Consumable,Pencil,Dollar,ABC-123,2021-04-14 18:26:31.078
 Consumable,File,Star,QGW-4318,2021-04-14 18:26:31.078
 Consumable,Pencil,Dollar,ABC-123,2021-04-14 18:26:31.078
@@ -30,3 +31,4 @@ Consumable,Pencil,Dollar,ABC-123,2021-04-14 18:26:31.078
 Consumable,File,Star,QGW-4308,2021-04-14 18:26:31.078
 Consumable,Pencil,Dollar,ABC-123,2021-04-14 18:26:31.078
 Consumable,File,Star,QGW-4768,2021-04-14 18:26:31.078
+Consumable,File,,IJD-6953,2021-04-17 20:02:45.677

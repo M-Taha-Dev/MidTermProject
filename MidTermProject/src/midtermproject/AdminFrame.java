@@ -645,6 +645,9 @@ public class AdminFrame extends javax.swing.JFrame {
         String employeePhone = phone.getText();
         String employeeEmail = email.getText();
         String employeePassword = password.getText();
+        boolean c = Admin.getInstance().checkAdminInput(employeeName, employeePhone, employeeEmail, employeePassword);
+        if(c)
+        {
         Employee obj = new Employee();
         obj.createEmployee(employeeName, employeePhone, employeeEmail, employeePassword);
         Admin admin = Admin.getInstance();
@@ -653,6 +656,11 @@ public class AdminFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Employee Registered Successfully");
         } else {
             JOptionPane.showMessageDialog(null, "Unable to Register Employee");
+        }
+        }
+        else
+        {
+            JOptionPane.showConfirmDialog(null,"Invalid Input");
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 

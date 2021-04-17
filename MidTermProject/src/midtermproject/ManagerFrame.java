@@ -517,6 +517,8 @@ public class ManagerFrame extends javax.swing.JFrame {
         });
         jPanel3.add(viewButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 530, 136, 57));
 
+        requestPanel.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Request ID: ");
 
@@ -686,6 +688,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         });
         jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 540, -1, 50));
 
+        requestPanel1.setBackground(new java.awt.Color(255, 255, 255));
         requestPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -789,9 +792,21 @@ public class ManagerFrame extends javax.swing.JFrame {
         jPanel5.add(yearLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 499, -1, 36));
 
         modelField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        modelField.setText("XXX-0000");
+        modelField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modelFieldMouseClicked(evt);
+            }
+        });
         jPanel5.add(modelField, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 408, 270, 40));
 
         companyName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        companyName.setText("NAME");
+        companyName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                companyNameMouseClicked(evt);
+            }
+        });
         jPanel5.add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 324, 270, 40));
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -1088,8 +1103,12 @@ public class ManagerFrame extends javax.swing.JFrame {
             String cName = companyName.getText();
             String model = modelField.getText();
             Date dt = jCalendar1.getDate();
+            boolean a = Manager.getInstance().validName(cName);
+            boolean b = Manager.getInstance().validateModel(model);
             Timestamp ts = new Timestamp(dt.getTime());
             String year = "" + ts;
+            if(a== true && b== true)
+            {
             NonConsumableAccessories obj = new NonConsumableAccessories();
             obj.setModel(model);
             obj.setType(Type);
@@ -1101,13 +1120,20 @@ public class ManagerFrame extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "unable to save data");
             }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Invalid Input");
+            }
         } else if (consumableRadio.isSelected()) {
             String Type = (String) itemComboBox.getSelectedItem();
             String cName = companyName.getText();
             String tag = modelField.getText();
+             boolean a = Manager.getInstance().validName(cName);
             Date date = new Date();
             Timestamp ts = new Timestamp(date.getTime());
-
+            if(a)
+            {
             ConsumableAccessories obj = new ConsumableAccessories();
             obj.setCompanyName(cName);
             obj.setType(Type);
@@ -1118,6 +1144,11 @@ public class ManagerFrame extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Saved successfully");
             } else {
                 JOptionPane.showMessageDialog(null, "unable to save data");
+            }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "invalid input");
             }
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -1481,6 +1512,16 @@ public class ManagerFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         modelField.setText(Manager.getInstance().generateTag());
     }//GEN-LAST:event_generateButtonActionPerformed
+
+    private void modelFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modelFieldMouseClicked
+        // TODO add your handling code here:
+        modelField.setText("");
+    }//GEN-LAST:event_modelFieldMouseClicked
+
+    private void companyNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_companyNameMouseClicked
+        // TODO add your handling code here:
+        companyName.setText("");
+    }//GEN-LAST:event_companyNameMouseClicked
 
     void showEmployeeRequest(Employee emp, Request req) {
         empName.setText(emp.getName());

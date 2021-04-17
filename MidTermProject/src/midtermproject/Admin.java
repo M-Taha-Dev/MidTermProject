@@ -22,13 +22,8 @@ public class Admin {
 
     private Admin() {
         employeeList = new ArrayList<>();
-        this.o.setName("Muhammad Taha");
-        this.o.setEmail("taha@gmail.com");
-        this.o.setCellNumber("03323491128");
-        this.o.setPassword("taha123");
-        this.addEmployee(o);
     }
-
+    
     static Admin getInstance() {
         if (instance == null) {
             instance = new Admin();
@@ -194,5 +189,67 @@ public class Admin {
 
         }
     }
+    
+    boolean checkAdminInput(String name,String number,String email,String password)
+    {
+        boolean check1 = false;
+        boolean check2 = false;
+        boolean check3 = false;
+        boolean check4 = false;
+        char arr[] = name.toCharArray();
+        for(int i=0;i<arr.length;i++)
+        {
+            if((arr[i]>='A'&&arr[i]<='Z')||(arr[i]>='a'&&arr[i]<='z')||(arr[i] == ' '))
+            {
+                check1 = true;
+            }
+            else
+            {
+                check1 = false;
+                break;
+            }
+        }
+       
+        arr = number.toCharArray();
+        if(arr.length == 11)
+        {
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i] >= '0' && arr[i] <= '9')
+            {
+                check2= true;
+            }
+            else{
+                check2 = false;
+                break;
+            }
+        }
+        }
+        
+        arr = email.toCharArray();
+        for (int i=0;i<arr.length;i++)
+        {
+            if(arr[i] == '@' || arr[i] == '.')
+            {
+                check3 = true;
+            }
+        }
+        arr = password.toCharArray();
+        if(arr.length>0)
+        {
+            check4 = true;
+        }
+        
+        if((check1)&&(check2) && (check3)&&(check4))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    
 
 }
