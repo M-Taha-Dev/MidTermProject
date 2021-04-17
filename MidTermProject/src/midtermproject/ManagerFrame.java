@@ -137,7 +137,6 @@ public class ManagerFrame extends javax.swing.JFrame {
         nameLabel = new javax.swing.JLabel();
         yearLabel = new javax.swing.JLabel();
         modelField = new javax.swing.JTextField();
-        yearField = new javax.swing.JTextField();
         companyName = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         generateButton = new javax.swing.JButton();
@@ -811,9 +810,6 @@ public class ManagerFrame extends javax.swing.JFrame {
         modelField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel5.add(modelField, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 408, 270, 40));
 
-        yearField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel5.add(yearField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, 270, 40));
-
         companyName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel5.add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 324, 270, 40));
 
@@ -1068,7 +1064,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         modelLabel.setVisible(true);
         yearLabel.setVisible(true);
         modelField.setVisible(true);
-        yearField.setVisible(true);
+        // yearField.setVisible(true);
         DefaultComboBoxModel model = new DefaultComboBoxModel();
         //  itemComboBox = new JComboBox();
         model.addElement("Laptop");
@@ -1091,7 +1087,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         yearLabel.setVisible(false);
         modelField.setEditable(false);
         // modelField.setVisible(false);
-        yearField.setVisible(false);
+        // yearField.setVisible(false);
         DefaultComboBoxModel model = new DefaultComboBoxModel();
         //  itemComboBox = new JComboBox();
         model.addElement("File");
@@ -1130,7 +1126,7 @@ public class ManagerFrame extends javax.swing.JFrame {
             String tag = modelField.getText();
             Date date = new Date();
             Timestamp ts = new Timestamp(date.getTime());
-            
+
             ConsumableAccessories obj = new ConsumableAccessories();
             obj.setCompanyName(cName);
             obj.setType(Type);
@@ -1303,25 +1299,30 @@ public class ManagerFrame extends javax.swing.JFrame {
         empPhone.setText("");
         empEmail.setText("");
         requestPanel.setVisible(false);
-        
+
     }//GEN-LAST:event_acceptButtonActionPerformed
 
     void createReceipt(String id) {
         Request obj = Manager.getInstance().searchReqID(id);
+        String email = Manager.getInstance().returnEmail(obj.getReqID());
+        Employee obj12 = Admin.getInstance().viewEmployee(email);
         List<NonConsumableAccessories> nList = obj.getnList();
         List<ConsumableAccessories> cList = obj.getcList();
         try {
             FileWriter fr = new FileWriter("Receipt.txt");
-            String out1 = String.format("Employee Name: Name" + "\n" + "Email: Email" + "\n" + "Phone Number: 000000000000 " + "\n");
+            String out1 = String.format("Employee Name: " + obj12.getName() + "\n" + "Email: " + obj12.getEmail() + "\n" + "Phone Number: " + obj12.getCellNumber() + "\n");
             String input = "";
             String temp = "";
-            for (int i = 0; i < nList.size(); i++) {
+            int r = nList.size() + cList.size();
+            int c = 4;
+          //  out1 = out1 + String.format("%-30s,%-30s,%-30s,%-30s","Company Name","Model","Item","Type");
+             for (int i = 0; i < nList.size(); i++) {
                 temp = temp + nList.get(i).getCompanyName() + ",";
                 temp = temp + nList.get(i).getModel() + ",";
                 temp = temp + nList.get(i).getType() + ",";
                 temp = temp + "Non Consumable";
                 if (i < nList.size() - 1) {
-                    temp = temp + ",";
+                    temp = temp + "\n";
                 }
             }
             for (int i = 0; i < cList.size(); i++) {
@@ -1330,7 +1331,7 @@ public class ManagerFrame extends javax.swing.JFrame {
                 input = input + cList.get(i).getType() + ",";
                 input = input + "Consumable";
                 if (i < cList.size() - 1) {
-                    input = input + ",";
+                    input = input + "\n";
                 }
 
             }
@@ -1342,7 +1343,10 @@ public class ManagerFrame extends javax.swing.JFrame {
             } else if (!input.equals("")) {
                 out = input;
             }
-            out1 = out1 + "," + out;
+            
+            
+            
+            out1 = out1 + out;
             fr.write(out1);
             fr.flush();
             fr.close();
@@ -1350,8 +1354,6 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         }
     }
-
-
     private void rejectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectButtonActionPerformed
         // TODO add your handling code here:
         String id = reqIDField.getText();
@@ -1374,7 +1376,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         ListSelectionModel m = allRequestTable.getSelectionModel();
         DefaultTableModel model = (DefaultTableModel) allRequestTable.getModel();
         int rowIndex = m.getMinSelectionIndex();
-        
+
         String reqID = (String) model.getValueAt(rowIndex, 1);
         String email = Manager.getInstance().returnEmail(reqID);
         Employee emp = Admin.getInstance().viewEmployee(email);
@@ -1383,19 +1385,19 @@ public class ManagerFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_allRequestTableMouseClicked
 
     void showEmployeeRec(Receipt rec, Employee emp) {
-            empName1.setText(emp.getName());
-            empPhone1.setText(emp.getCellNumber());
-            empEmail1.setText(emp.getEmail());
-            reqIDField1.setText(rec.getReqID());
-            reqIDField1.setEditable(false);
-            empName1.setEditable(false);
-            empPhone1.setEditable(false);
-            empEmail1.setEditable(false);
-            String[][] rowData = createEmployeeRecTable(rec.getnList(), rec.getcList());
-            String[] columnHeader = {"Company", "Tag", "Item", "Type"};
-            DefaultTableModel model = (DefaultTableModel) employeeRequest1.getModel();
-            model.setDataVector(rowData, columnHeader);
-        
+        empName1.setText(emp.getName());
+        empPhone1.setText(emp.getCellNumber());
+        empEmail1.setText(emp.getEmail());
+        reqIDField1.setText(rec.getReqID());
+        reqIDField1.setEditable(false);
+        empName1.setEditable(false);
+        empPhone1.setEditable(false);
+        empEmail1.setEditable(false);
+        String[][] rowData = createEmployeeRecTable(rec.getnList(), rec.getcList());
+        String[] columnHeader = {"Company", "Tag", "Item", "Type"};
+        DefaultTableModel model = (DefaultTableModel) employeeRequest1.getModel();
+        model.setDataVector(rowData, columnHeader);
+
     }
 
     String[][] createEmployeeRecTable(List<NonConsumableAccessories> nList, List<ConsumableAccessories> cList) {
@@ -1586,7 +1588,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         homeModel.setText(cObj.getTag());
         String a = "" + cObj.getTime();
         homeYear.setText(a);
-        
+
         itemName.setEditable(false);
         categoryName.setEditable(false);
         homeCompanyName.setEditable(false);
@@ -1660,15 +1662,6 @@ public class ManagerFrame extends javax.swing.JFrame {
         model.setDataVector(rowData, colHeader);
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
     /**
      * @param args the command line arguments
      */
@@ -1794,7 +1787,6 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JTextField searchField;
     private javax.swing.JButton viewButton;
     private javax.swing.JButton viewButton1;
-    private javax.swing.JTextField yearField;
     private javax.swing.JLabel yearLabel;
     // End of variables declaration//GEN-END:variables
 }

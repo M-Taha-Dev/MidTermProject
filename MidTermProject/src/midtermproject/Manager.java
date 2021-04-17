@@ -443,5 +443,20 @@ public class Manager extends Accessories {
         }
         return var;
     }
-    
+     
+     
+     void saveReceiptList()
+     {
+         try
+         {
+         FileWriter fw = new FileWriter("EmployeeRequests.txt");
+         String out = "";
+         Receipt obj = new Receipt();
+         
+         }
+         catch(Exception ex)
+         {
+             
+         }
+     }
 }
