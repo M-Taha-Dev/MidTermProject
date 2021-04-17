@@ -1,4 +1,7 @@
 Employee Name: Muhammad Taha
 Email: taha@gmail.com
 Phone Number: 03323491128
+Acer,MAM-123,Projector,Non Consumable
+HP,Spectre,Laptop,Non Consumable
+,Star,QGW-4218,File,Consumable
 Dollar,ABC-123,Pencil,Consumable

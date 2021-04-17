@@ -1107,47 +1107,41 @@ public class ManagerFrame extends javax.swing.JFrame {
             boolean b = Manager.getInstance().validateModel(model);
             Timestamp ts = new Timestamp(dt.getTime());
             String year = "" + ts;
-            if(a== true && b== true)
-            {
-            NonConsumableAccessories obj = new NonConsumableAccessories();
-            obj.setModel(model);
-            obj.setType(Type);
-            obj.setCompanyName(cName);
-            obj.setYearOfManufacture(year);
-            boolean check = Manager.getInstance().addNonConsumableAccessories(obj);
-            if (check) {
-                JOptionPane.showMessageDialog(null, "Saved successfully");
+            if (a == true && b == true) {
+                NonConsumableAccessories obj = new NonConsumableAccessories();
+                obj.setModel(model);
+                obj.setType(Type);
+                obj.setCompanyName(cName);
+                obj.setYearOfManufacture(year);
+                boolean check = Manager.getInstance().addNonConsumableAccessories(obj);
+                if (check) {
+                    JOptionPane.showMessageDialog(null, "Saved successfully");
+                } else {
+                    JOptionPane.showMessageDialog(null, "unable to save data");
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "unable to save data");
-            }
-            }
-            else
-            {
                 JOptionPane.showMessageDialog(null, "Invalid Input");
             }
         } else if (consumableRadio.isSelected()) {
             String Type = (String) itemComboBox.getSelectedItem();
             String cName = companyName.getText();
             String tag = modelField.getText();
-             boolean a = Manager.getInstance().validName(cName);
+            boolean a = Manager.getInstance().validName(cName);
             Date date = new Date();
             Timestamp ts = new Timestamp(date.getTime());
-            if(a)
-            {
-            ConsumableAccessories obj = new ConsumableAccessories();
-            obj.setCompanyName(cName);
-            obj.setType(Type);
-            obj.setTag(tag);
-            obj.setTime(ts);
-            boolean check = Manager.getInstance().addConsumableAccessories(obj);
-            if (check) {
-                JOptionPane.showMessageDialog(null, "Saved successfully");
+            if (a) {
+                ConsumableAccessories obj = new ConsumableAccessories();
+                obj.setCompanyName(cName);
+                obj.setType(Type);
+                obj.setTag(tag);
+                obj.setTime(ts);
+                boolean check = Manager.getInstance().addConsumableAccessories(obj);
+                if (check) {
+                    JOptionPane.showMessageDialog(null, "Saved successfully");
+                } else {
+                    JOptionPane.showMessageDialog(null, "unable to save data");
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "unable to save data");
-            }
-            }
-            else
-            {
                 JOptionPane.showMessageDialog(null, "invalid input");
             }
         }
@@ -1272,7 +1266,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void requestTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_requestTableMouseClicked
         // TODO add your handling code here:
-        
+
         ListSelectionModel m = requestTable.getSelectionModel();
         DefaultTableModel model = (DefaultTableModel) requestTable.getModel();
         int rowIndex = m.getMinSelectionIndex();
@@ -1281,11 +1275,13 @@ public class ManagerFrame extends javax.swing.JFrame {
         Request reqObj = Manager.getInstance().searchReqID(reqID);
         Employee empObj = Admin.getInstance().viewEmployee(email);
         showEmployeeRequest(empObj, reqObj);
-        viewButton1.setVisible(false);
+        viewButton1.setVisible(true);
     }//GEN-LAST:event_requestTableMouseClicked
 
     private void acceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptButtonActionPerformed
         // TODO add your handling code here:
+         createReqTable1();
+        createRecTable();
         viewButton1.setVisible(true);
         String id = reqIDField.getText();
         Request obj = Manager.getInstance().searchReqID(id);
@@ -1322,24 +1318,20 @@ public class ManagerFrame extends javax.swing.JFrame {
             String temp = "";
             int r = nList.size() + cList.size();
             int c = 4;
-          //  out1 = out1 + String.format("%-30s,%-30s,%-30s,%-30s","Company Name","Model","Item","Type");
-             for (int i = 0; i < nList.size(); i++) {
+            //  out1 = out1 + String.format("%-30s,%-30s,%-30s,%-30s","Company Name","Model","Item","Type");
+            for (int i = 0; i < nList.size(); i++) {
                 temp = temp + nList.get(i).getCompanyName() + ",";
                 temp = temp + nList.get(i).getModel() + ",";
                 temp = temp + nList.get(i).getType() + ",";
-                temp = temp + "Non Consumable";
-                if (i < nList.size() - 1) {
-                    temp = temp + "\n";
-                }
+                temp = temp + "Non Consumable" + "\n";
+
             }
             for (int i = 0; i < cList.size(); i++) {
                 input = input + cList.get(i).getCompanyName() + ",";
                 input = input + cList.get(i).getTag() + ",";
                 input = input + cList.get(i).getType() + ",";
                 input = input + "Consumable";
-                if (i < cList.size() - 1) {
-                    input = input + "\n";
-                }
+                input = input + "\n";
 
             }
             String out = "";
@@ -1350,9 +1342,7 @@ public class ManagerFrame extends javax.swing.JFrame {
             } else if (!input.equals("")) {
                 out = input;
             }
-            
-            
-            
+
             out1 = out1 + out;
             fr.write(out1);
             fr.flush();
@@ -1363,7 +1353,9 @@ public class ManagerFrame extends javax.swing.JFrame {
     }
     private void rejectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectButtonActionPerformed
         // TODO add your handling code here:
+         createReqTable1();
         viewButton1.setVisible(true);
+        createRecTable();
         String id = reqIDField.getText();
         Request obj = Manager.getInstance().searchReqID(id);
         boolean check = Manager.getInstance().rejectRequest(obj);
@@ -1501,11 +1493,12 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
+        
         empName.setText("");
         empPhone.setText("");
         empEmail.setText("");
         reqIDField.setText("");
-        requestPanel.setVisible(false);
+        requestPanel1.setVisible(false);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed

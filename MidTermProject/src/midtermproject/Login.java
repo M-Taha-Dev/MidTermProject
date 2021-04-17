@@ -399,7 +399,7 @@ public class Login extends javax.swing.JFrame {
         char arr[] = password.getPassword();
         String pass = String.valueOf(arr);
         boolean flag = Admin.getInstance().signIn(employeeEmail, pass);
-        JOptionPane.showMessageDialog(null, employeeEmail + "\n" + pass);
+        //JOptionPane.showMessageDialog(null, employeeEmail + "\n" + pass);
         if(flag)
         {
         EmployeeFrame form = new EmployeeFrame(employeeEmail);

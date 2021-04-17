@@ -555,7 +555,7 @@ public class EmployeeFrame extends javax.swing.JFrame {
         if (ncObj != null) {
             out = String.format("Item: " + ncObj.getType() + "  " + "Type: " + "Non Consumable" + "\n" + "Company Name: " + ncObj.getCompanyName() + "\n" + "Model No.: " + ncObj.getModel() + "\n" + "Year of Manufacture:  " + ncObj.getYearOfManufacture());
         } else if (cObj != null) {
-            out = String.format("Item: " + cObj.getType() + "  " + "Type: " + "Non Consumable" + "\n" + "Company Name: " + cObj.getCompanyName() + "\n" + "Model No.: " + cObj.getTag() + "\n");
+            out = String.format("Item: " + cObj.getType() + "  " + "Type: " + "Consumable" + "\n" + "Company Name: " + cObj.getCompanyName() + "\n" + "Model No.: " + cObj.getTag() + "\n");
         }
         JOptionPane.showMessageDialog(null, out);
         //cObj = null;
