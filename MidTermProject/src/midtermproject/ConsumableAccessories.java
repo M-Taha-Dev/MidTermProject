@@ -5,7 +5,7 @@
  */
 package midtermproject;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 /**
  *
@@ -17,6 +17,16 @@ public class ConsumableAccessories {
     private Timestamp Time;
     private String companyName;
     private String tag;
+    private int quantity;
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    
     public ConsumableAccessories()
     {
         this.status = "Unoccupied";

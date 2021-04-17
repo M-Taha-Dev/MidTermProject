@@ -384,9 +384,6 @@ public class Login extends javax.swing.JFrame {
         {
             
     }*/
-        
-
-
         // TODO add your handling code here:
     }//GEN-LAST:event_signInButtonMouseClicked
 
@@ -398,28 +395,26 @@ public class Login extends javax.swing.JFrame {
     }
     else if(employee.isSelected())
     {
-       // String employeeEmail = email.getText();
-       /* char arr[] = password.getPassword();
+        String employeeEmail = email.getText();
+        char arr[] = password.getPassword();
         String pass = String.valueOf(arr);
         boolean flag = Admin.getInstance().signIn(employeeEmail, pass);
+        JOptionPane.showMessageDialog(null, employeeEmail + "\n" + pass);
         if(flag)
-        {*/
-        EmployeeFrame form = new EmployeeFrame();
+        {
+        EmployeeFrame form = new EmployeeFrame(employeeEmail);
         form.setVisible(true);
-        //}
-        /*else
+        }
+        else
         {
             JOptionPane.showMessageDialog(null,"Invalid!");
-        }*/
+        }
     }
     else if (manager.isSelected())
     {
         ManagerFrame form = new ManagerFrame();
         form.setVisible(true);
     }
-       
-
-
         // TODO add your handling code here:
     }//GEN-LAST:event_signInButtonActionPerformed
 

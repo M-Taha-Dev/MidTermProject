@@ -5,6 +5,9 @@
  */
 package midtermproject;
 
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.FileWriter;
 import java.util.*;
 
 /**
@@ -15,13 +18,14 @@ public class Admin {
 
     private static Admin instance;
     private List<Employee> employeeList = new ArrayList<>();
-     Employee o =new Employee();
+    Employee o = new Employee();
+
     private Admin() {
         employeeList = new ArrayList<>();
         this.o.setName("Muhammad Taha");
         this.o.setEmail("taha@gmail.com");
         this.o.setCellNumber("03323491128");
-        this.o.setPassword("Taha123");
+        this.o.setPassword("taha123");
         this.addEmployee(o);
     }
 
@@ -133,21 +137,62 @@ public class Admin {
                 strList.add(employeeList.get(i));
             }
         }
-        
+
         return strList;
     }
-    
-    boolean signIn(String email,String password)
-    {
+
+    boolean signIn(String email, String password) {
         boolean check = false;
-        for(int i=0;i<employeeList.size();i++)
-        {
-            if(employeeList.get(i).getEmail().equals(email) && employeeList.get(i).getPassword().equals(password))
-            {
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getEmail().equals(email) && employeeList.get(i).getPassword().equals(password)) {
                 check = true;
                 break;
             }
         }
         return check;
     }
+
+    void saveEmployeeData() {
+        try {
+            FileWriter fw = new FileWriter("Employee.txt");
+            String out = "";
+            for (int i = 0; i < employeeList.size(); i++) {
+                out = out + employeeList.get(i).getName() + ",";
+                out = out + employeeList.get(i).getEmail() + ",";
+                out = out + employeeList.get(i).getCellNumber() + ",";
+                out = out + employeeList.get(i).getPassword() + "\n";
+            }
+            fw.write(out);
+            fw.flush();
+            fw.close();
+        } catch (Exception ex) {
+
+        }
+    }
+
+    void readData() {
+        try {
+            FileReader fr = new FileReader("Employee.txt");
+            BufferedReader br = new BufferedReader(fr);
+            String line = br.readLine();
+            while (line != null) {
+                String[] arr = line.split(",");
+                Employee obj = new Employee();
+                obj.setName(arr[0]);
+                obj.setEmail(arr[1]);
+                obj.setCellNumber(arr[2]);
+                obj.setPassword(arr[3]);
+                if (obj != null) {
+                    employeeList.add(obj);
+                }
+                line = br.readLine();
+            }
+            br.close();
+            fr.close();
+
+        } catch (Exception ex) {
+
+        }
+    }
+
 }

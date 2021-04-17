@@ -8,6 +8,7 @@ package midtermproject;
 import java.awt.Color;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Timestamp;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -36,7 +37,12 @@ public class ManagerFrame extends javax.swing.JFrame {
         homeModelRadio.setVisible(false);
         homePanel.setVisible(false);
         createReqTable1();
+        createRecTable();
+//        createRecTable(email);
         requestPanel.setVisible(false);
+        requestPanel1.setVisible(false);
+        managerTable.setOpaque(false);
+        generateButton.setVisible(false);
         //Manager.getInstance().fetchRequests(strList);
     }
 
@@ -102,6 +108,26 @@ public class ManagerFrame extends javax.swing.JFrame {
         reqIDField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        allRequestTable = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        requestPanel1 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        empName1 = new javax.swing.JTextField();
+        empPhone1 = new javax.swing.JTextField();
+        empEmail1 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        employeeRequest1 = new javax.swing.JTable();
+        reqIDField1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         itemComboBox = new javax.swing.JComboBox<>();
@@ -114,6 +140,8 @@ public class ManagerFrame extends javax.swing.JFrame {
         yearField = new javax.swing.JTextField();
         companyName = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+        generateButton = new javax.swing.JButton();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -247,9 +275,10 @@ public class ManagerFrame extends javax.swing.JFrame {
         });
         jPanel1.add(adminButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 341, 90));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 340, 800));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 340, 810));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setEnabled(false);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         searchField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -277,6 +306,8 @@ public class ManagerFrame extends javax.swing.JFrame {
 
             }
         ));
+        managerTable.setGridColor(new java.awt.Color(255, 255, 255));
+        managerTable.setOpaque(false);
         managerTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 managerTableMouseClicked(evt);
@@ -617,16 +648,121 @@ public class ManagerFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab2", jPanel3);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1215, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
-        );
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        allRequestTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        allRequestTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                allRequestTableMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(allRequestTable);
+
+        jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 544, 302));
+        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 77, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel8.setText("Receipts");
+        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(644, 115, -1, -1));
+
+        jButton6.setBackground(new java.awt.Color(51, 102, 255));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("View");
+        jButton6.setFocusable(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 540, 104, 50));
+
+        jButton7.setBackground(new java.awt.Color(51, 102, 255));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("Remove");
+        jButton7.setFocusable(false);
+        jPanel6.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, -1, 50));
+
+        jButton8.setBackground(new java.awt.Color(51, 102, 255));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Remove All");
+        jButton8.setFocusable(false);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 540, -1, 50));
+
+        requestPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setText("Request ID: ");
+        requestPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 23, -1, 30));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel10.setText("Phone No.: ");
+        requestPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 141, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel11.setText("Email: ");
+        requestPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 195, -1, -1));
+
+        empName1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        requestPanel1.add(empName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 175, -1));
+
+        empPhone1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        requestPanel1.add(empPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 138, 175, -1));
+
+        empEmail1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        requestPanel1.add(empEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 192, 175, -1));
+
+        employeeRequest1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane5.setViewportView(employeeRequest1);
+
+        requestPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 400, 328));
+
+        reqIDField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        requestPanel1.add(reqIDField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 24, 175, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setText("Employee Name: ");
+        requestPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 83, -1, -1));
+
+        jButton10.setBackground(new java.awt.Color(51, 102, 255));
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("Close");
+        jButton10.setFocusable(false);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        requestPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 690, 104, 50));
+
+        jPanel6.add(requestPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 780));
+
+        jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1305, 780));
 
         jTabbedPane1.addTab("tab3", jPanel4);
 
@@ -676,7 +812,7 @@ public class ManagerFrame extends javax.swing.JFrame {
         jPanel5.add(modelField, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 408, 270, 40));
 
         yearField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel5.add(yearField, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 497, 270, 40));
+        jPanel5.add(yearField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, 270, 40));
 
         companyName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel5.add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 324, 270, 40));
@@ -688,11 +824,21 @@ public class ManagerFrame extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 610, 112, 53));
+        jPanel5.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 700, 112, 53));
+
+        generateButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        generateButton.setText("Generate Tag");
+        generateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generateButtonActionPerformed(evt);
+            }
+        });
+        jPanel5.add(generateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 400, 150, 53));
+        jPanel5.add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, 310, 190));
 
         jTabbedPane1.addTab("tab4", jPanel5);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1220, 810));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1280, 810));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -764,16 +910,17 @@ public class ManagerFrame extends javax.swing.JFrame {
         Login form = new Login();
         this.setVisible(false);
         form.setVisible(true);
+        Manager.getInstance().saveAccessories();
     }//GEN-LAST:event_adminButton3ActionPerformed
 
     private void adminButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton4MouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_adminButton4MouseClicked
 
     private void adminButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton4MouseEntered
         // TODO add your handling code here:
-         adminButton4.setBackground(Color.white);
+        adminButton4.setBackground(Color.white);
         adminButton4.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_adminButton4MouseEntered
 
@@ -794,7 +941,7 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void adminButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminButton5MouseEntered
         // TODO add your handling code here:
-          adminButton5.setBackground(Color.white);
+        adminButton5.setBackground(Color.white);
         adminButton5.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_adminButton5MouseEntered
 
@@ -819,6 +966,7 @@ public class ManagerFrame extends javax.swing.JFrame {
             showDataN();
         } else if (consumableHome.isSelected()) {
             showDataC();
+            homeYearLabel.setText("Received Date");
         }
 
         // TODO add your handling code here:
@@ -911,7 +1059,11 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void nonConsumableRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nonConsumableRadioActionPerformed
         // TODO add your handling code here:
+        jCalendar1.setVisible(true);
+        generateButton.setVisible(false);
         modelLabel.setText("Model");
+        modelField.setText("");
+        modelField.setEditable(true);
         consumableRadio.setSelected(false);
         modelLabel.setVisible(true);
         yearLabel.setVisible(true);
@@ -931,10 +1083,13 @@ public class ManagerFrame extends javax.swing.JFrame {
 
     private void consumableRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consumableRadioActionPerformed
         // TODO add your handling code here:
+        jCalendar1.setVisible(false);
+        generateButton.setVisible(true);
         nonConsumableRadio.setSelected(false);
         //modelLabel.setVisible(false);
-        modelLabel.setText("Tag");
+        modelLabel.setText("Tag No. ");
         yearLabel.setVisible(false);
+        modelField.setEditable(false);
         // modelField.setVisible(false);
         yearField.setVisible(false);
         DefaultComboBoxModel model = new DefaultComboBoxModel();
@@ -954,8 +1109,10 @@ public class ManagerFrame extends javax.swing.JFrame {
         if (nonConsumableRadio.isSelected()) {
             String Type = (String) itemComboBox.getSelectedItem();
             String cName = companyName.getText();
-            String year = yearField.getText();
             String model = modelField.getText();
+            Date dt = jCalendar1.getDate();
+            Timestamp ts = new Timestamp(dt.getTime());
+            String year = "" + ts;
             NonConsumableAccessories obj = new NonConsumableAccessories();
             obj.setModel(model);
             obj.setType(Type);
@@ -970,9 +1127,15 @@ public class ManagerFrame extends javax.swing.JFrame {
         } else if (consumableRadio.isSelected()) {
             String Type = (String) itemComboBox.getSelectedItem();
             String cName = companyName.getText();
+            String tag = modelField.getText();
+            Date date = new Date();
+            Timestamp ts = new Timestamp(date.getTime());
+            
             ConsumableAccessories obj = new ConsumableAccessories();
             obj.setCompanyName(cName);
             obj.setType(Type);
+            obj.setTag(tag);
+            obj.setTime(ts);
             boolean check = Manager.getInstance().addConsumableAccessories(obj);
             if (check) {
                 JOptionPane.showMessageDialog(null, "Saved successfully");
@@ -1096,7 +1259,7 @@ public class ManagerFrame extends javax.swing.JFrame {
     private void viewButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButton1ActionPerformed
         // TODO add your handling code here:
         requestPanel.setVisible(true);
-        
+
     }//GEN-LAST:event_viewButton1ActionPerformed
 
     private void rejectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectAllButtonActionPerformed
@@ -1117,7 +1280,6 @@ public class ManagerFrame extends javax.swing.JFrame {
         Request reqObj = Manager.getInstance().searchReqID(reqID);
         Employee empObj = Admin.getInstance().viewEmployee(email);
         showEmployeeRequest(empObj, reqObj);
-
     }//GEN-LAST:event_requestTableMouseClicked
 
     private void acceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptButtonActionPerformed
@@ -1126,35 +1288,123 @@ public class ManagerFrame extends javax.swing.JFrame {
         Request obj = Manager.getInstance().searchReqID(id);
         boolean check = Manager.getInstance().acceptRequest(obj);
         Receipt rec = new Receipt();
-        if(check)
-        {
-//            rec = Manager.getInstance().createReceipt(id);
+        if (check) {
+            rec = Manager.getInstance().createEmployeeReceipt(id);
+            Employee emp = Admin.getInstance().viewEmployee(rec.getEmail());
+            emp.setRec(rec);
             Manager.getInstance().addReceipt(rec);
             createReceipt(id);
-            JOptionPane.showMessageDialog(null,"Operation Successful");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Operation was not Successful");
+            JOptionPane.showMessageDialog(null, "Operation Successful");
+        } else {
+            JOptionPane.showMessageDialog(null, "Operation was not Successful");
         }
         reqIDField.setText("");
         empName.setText("");
         empPhone.setText("");
         empEmail.setText("");
         requestPanel.setVisible(false);
+        
     }//GEN-LAST:event_acceptButtonActionPerformed
 
-    void createReceipt(String id) 
-    {
+    void createReceipt(String id) {
         Request obj = Manager.getInstance().searchReqID(id);
-        List<NonConsumableAccessories>nList = obj.getnList();
-        List<ConsumableAccessories>cList = obj.getcList();
-        try{
-        FileWriter fr = new FileWriter("Receipt.txt");
-        String out1 = String.format("Employee Name: Name" + "\n" + "Email: Email" +  "\n"+  "Phone Number: 000000000000 " + "\n");
-        String input = "";
+        List<NonConsumableAccessories> nList = obj.getnList();
+        List<ConsumableAccessories> cList = obj.getcList();
+        try {
+            FileWriter fr = new FileWriter("Receipt.txt");
+            String out1 = String.format("Employee Name: Name" + "\n" + "Email: Email" + "\n" + "Phone Number: 000000000000 " + "\n");
+            String input = "";
+            String temp = "";
+            for (int i = 0; i < nList.size(); i++) {
+                temp = temp + nList.get(i).getCompanyName() + ",";
+                temp = temp + nList.get(i).getModel() + ",";
+                temp = temp + nList.get(i).getType() + ",";
+                temp = temp + "Non Consumable";
+                if (i < nList.size() - 1) {
+                    temp = temp + ",";
+                }
+            }
+            for (int i = 0; i < cList.size(); i++) {
+                input = input + cList.get(i).getCompanyName() + ",";
+                input = input + cList.get(i).getTag() + ",";
+                input = input + cList.get(i).getType() + ",";
+                input = input + "Consumable";
+                if (i < cList.size() - 1) {
+                    input = input + ",";
+                }
+
+            }
+            String out = "";
+            if (!temp.equals("") && (!input.equals(""))) {
+                out = temp + "," + input;
+            } else if (!temp.equals("")) {
+                out = temp;
+            } else if (!input.equals("")) {
+                out = input;
+            }
+            out1 = out1 + "," + out;
+            fr.write(out1);
+            fr.flush();
+            fr.close();
+        } catch (Exception ex) {
+
+        }
+    }
+
+
+    private void rejectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectButtonActionPerformed
+        // TODO add your handling code here:
+        String id = reqIDField.getText();
+        Request obj = Manager.getInstance().searchReqID(id);
+        boolean check = Manager.getInstance().rejectRequest(obj);
+        if (check) {
+            JOptionPane.showMessageDialog(null, "Operation Successful");
+        } else {
+            JOptionPane.showMessageDialog(null, "Operation was not Successful");
+        }
+        reqIDField.setText("");
+        empName.setText("");
+        empPhone.setText("");
+        empEmail.setText("");
+        requestPanel.setVisible(false);
+    }//GEN-LAST:event_rejectButtonActionPerformed
+
+    private void allRequestTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_allRequestTableMouseClicked
+        // TODO add your handling code here:
+        ListSelectionModel m = allRequestTable.getSelectionModel();
+        DefaultTableModel model = (DefaultTableModel) allRequestTable.getModel();
+        int rowIndex = m.getMinSelectionIndex();
+        
+        String reqID = (String) model.getValueAt(rowIndex, 1);
+        String email = Manager.getInstance().returnEmail(reqID);
+        Employee emp = Admin.getInstance().viewEmployee(email);
+        Receipt recObj = Manager.getInstance().searchRecID(reqID);
+        showEmployeeRec(recObj, emp);
+    }//GEN-LAST:event_allRequestTableMouseClicked
+
+    void showEmployeeRec(Receipt rec, Employee emp) {
+            empName1.setText(emp.getName());
+            empPhone1.setText(emp.getCellNumber());
+            empEmail1.setText(emp.getEmail());
+            reqIDField1.setText(rec.getReqID());
+            reqIDField1.setEditable(false);
+            empName1.setEditable(false);
+            empPhone1.setEditable(false);
+            empEmail1.setEditable(false);
+            String[][] rowData = createEmployeeRecTable(rec.getnList(), rec.getcList());
+            String[] columnHeader = {"Company", "Tag", "Item", "Type"};
+            DefaultTableModel model = (DefaultTableModel) employeeRequest1.getModel();
+            model.setDataVector(rowData, columnHeader);
+        
+    }
+
+    String[][] createEmployeeRecTable(List<NonConsumableAccessories> nList, List<ConsumableAccessories> cList) {
+        int r = nList.size() + cList.size();
+        int c = 4;
+        String array[][] = new String[r][c];
         String temp = "";
-         for (int i = 0; i < nList.size(); i++) {
+        String input = "";
+        for (int i = 0; i < nList.size(); i++) {
             temp = temp + nList.get(i).getCompanyName() + ",";
             temp = temp + nList.get(i).getModel() + ",";
             temp = temp + nList.get(i).getType() + ",";
@@ -1171,7 +1421,6 @@ public class ManagerFrame extends javax.swing.JFrame {
             if (i < cList.size() - 1) {
                 input = input + ",";
             }
-            
         }
         String out = "";
         if (!temp.equals("") && (!input.equals(""))) {
@@ -1181,50 +1430,85 @@ public class ManagerFrame extends javax.swing.JFrame {
         } else if (!input.equals("")) {
             out = input;
         }
-        out1 = out1 + "," + out;
-        fr.write(out1);
-        fr.flush();
-        fr.close();
+        String arr[] = out.split(",");
+        int k = 0;
+
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (k < arr.length) {
+                    array[i][j] = arr[k];
+                    k++;
+                }
+            }
         }
-        catch(Exception ex)
-        {
-            
-        }
+        return array;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    private void rejectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectButtonActionPerformed
+
+    String[][] showrecList(List<Receipt> strList) {
+        int r = strList.size();
+        int c = 3;
+        String[][] array = new String[r][c];
+        String var = "";
+        int sr = 1;
+        for (int i = 0; i < strList.size(); i++) {
+            var = var + sr + ",";
+            var = var + strList.get(i).getReqID() + ",";
+            var = var + strList.get(i).getTimeq();
+            if (i < strList.size()) {
+                var = var + ",";
+            }
+        }
+        String[] arr = var.split(",");
+        int k = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (k < arr.length) {
+                    array[i][j] = arr[k];
+                    k++;
+                }
+            }
+        }
+        return array;
+    }
+
+    void createRecTable() {
+        List<Receipt> list = Manager.getInstance().recList;
+        String[][] rowData = showrecList(list);
+        String[] columnHeader = {"Sr No.", "Receipt ID", "Date & Time"};
+        DefaultTableModel model = (DefaultTableModel) allRequestTable.getModel();
+        model.setDataVector(rowData, columnHeader);
+    }
+
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        String id = reqIDField.getText();
-        Request obj = Manager.getInstance().searchReqID(id);
-        boolean check = Manager.getInstance().rejectRequest(obj);
-        if(check)
-        {
-            JOptionPane.showMessageDialog(null,"Operation Successful");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Operation was not Successful");
-        }
-        reqIDField.setText("");
+        requestPanel1.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
         empName.setText("");
         empPhone.setText("");
         empEmail.setText("");
+        reqIDField.setText("");
         requestPanel.setVisible(false);
-    }//GEN-LAST:event_rejectButtonActionPerformed
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
+        // TODO add your handling code here:
+        modelField.setText(Manager.getInstance().generateTag());
+    }//GEN-LAST:event_generateButtonActionPerformed
 
     void showEmployeeRequest(Employee emp, Request req) {
         empName.setText(emp.getName());
         empPhone.setText(emp.getCellNumber());
         empEmail.setText(emp.getEmail());
         reqIDField.setText(req.getReqID());
+        reqIDField.setEditable(false);
         empName.setEditable(false);
         empPhone.setEditable(false);
         empEmail.setEditable(false);
@@ -1280,8 +1564,6 @@ public class ManagerFrame extends javax.swing.JFrame {
         return array;
     }
 
-  
-
     void showDataN() {
         //homePanel.setVisible(true);
         itemName.setText("Non Consumable");
@@ -1302,7 +1584,9 @@ public class ManagerFrame extends javax.swing.JFrame {
         categoryName.setText(cObj.getType());
         homeCompanyName.setText(cObj.getCompanyName());
         homeModel.setText(cObj.getTag());
-        //homeYear.setText(cObj.getTime());
+        String a = "" + cObj.getTime();
+        homeYear.setText(a);
+        
         itemName.setEditable(false);
         categoryName.setEditable(false);
         homeCompanyName.setEditable(false);
@@ -1376,6 +1660,15 @@ public class ManagerFrame extends javax.swing.JFrame {
         model.setDataVector(rowData, colHeader);
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -1424,6 +1717,7 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JButton adminButton3;
     private javax.swing.JButton adminButton4;
     private javax.swing.JButton adminButton5;
+    private javax.swing.JTable allRequestTable;
     private javax.swing.JLabel categoryLabel;
     private javax.swing.JLabel categoryLabel1;
     private javax.swing.JTextField categoryName;
@@ -1433,9 +1727,14 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;
     private javax.swing.JTextField empEmail;
+    private javax.swing.JTextField empEmail1;
     private javax.swing.JTextField empName;
+    private javax.swing.JTextField empName1;
     private javax.swing.JTextField empPhone;
+    private javax.swing.JTextField empPhone1;
     private javax.swing.JTable employeeRequest;
+    private javax.swing.JTable employeeRequest1;
+    private javax.swing.JButton generateButton;
     private javax.swing.JComboBox<String> homeComboBox;
     private javax.swing.JTextField homeCompanyName;
     private javax.swing.JRadioButton homeCompanyRadio;
@@ -1448,21 +1747,35 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JLabel homeYearLabel;
     private javax.swing.JComboBox<String> itemComboBox;
     private javax.swing.JTextField itemName;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable managerTable;
     private javax.swing.JTextField modelField;
@@ -1473,7 +1786,9 @@ public class ManagerFrame extends javax.swing.JFrame {
     private javax.swing.JButton rejectAllButton;
     private javax.swing.JButton rejectButton;
     private javax.swing.JTextField reqIDField;
+    private javax.swing.JTextField reqIDField1;
     private javax.swing.JPanel requestPanel;
+    private javax.swing.JPanel requestPanel1;
     private javax.swing.JTable requestTable;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchField;

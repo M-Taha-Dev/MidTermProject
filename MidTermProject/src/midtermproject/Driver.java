@@ -19,17 +19,9 @@ public class Driver{
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        
-     
-        
-        
-        
-        
-        
-        
+        Manager.getInstance().readAccessories();
+        Admin.getInstance().readData();
         Login form = new Login();
         form.setVisible(true);
-        
     }
 }

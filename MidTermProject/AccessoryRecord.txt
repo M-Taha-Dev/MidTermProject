@@ -1,0 +1,3 @@
+Non Consumable,Laptop,HP,Spectre,2020
+Consumable,Pencil,Dollar,ABC-123,null
+Consumable,File,Star,QGW-4368,null

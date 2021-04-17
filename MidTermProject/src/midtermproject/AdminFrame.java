@@ -553,8 +553,10 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void adminButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButton3ActionPerformed
         Login form = new Login();
+        
         this.setVisible(false);
         form.setVisible(true);
+        Admin.getInstance().saveEmployeeData();
         // TODO add your handling code here:
     }//GEN-LAST:event_adminButton3ActionPerformed
 
