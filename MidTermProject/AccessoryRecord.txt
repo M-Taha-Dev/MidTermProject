@@ -5,7 +5,7 @@ Non Consumable,Projector,Acer,MAM-123,2021-04-14 18:26:31.078
 Non Consumable,Laptop,HP,Spectre,2021-04-10 18:26:31.078
 Non Consumable,Projector,Acer,MMQ-123,2021-04-14 18:26:31.078
 Non Consumable,Laptop,HP,Spectre,2021-04-10 18:26:31.078
-Non Consumable,Projector,Acer,MWM-123,2021-04-14 18:26:31.078
+Non Consumable,Projector,Acer,MWM-1232wsda,2021-04-14 18:26:31.078
 Non Consumable,Laptop,HP,Spectre,2021-04-10 18:26:31.078
 Non Consumable,Projector,Acer,MMV-123,2021-04-14 18:26:31.078
 Non Consumable,Laptop,HP,Spectre,2021-04-10 18:26:31.078
@@ -15,6 +15,7 @@ Non Consumable,Projector,Acer,uMM-123,2021-04-14 18:26:31.078
 Non Consumable,Laptop,HP,Spectre,2021-04-10 18:26:31.078
 Non Consumable,Projector,Acer,TYM-123,2021-04-14 18:26:31.078
 Non Consumable,Laptop,asc,AAA-3215,2021-04-13 20:14:48.717
+Non Consumable,Laptop,NAME,AAA-1231,2021-06-17 01:38:12.639
 Consumable,Pencil,Dollar,ABC-123,2021-04-14 18:26:31.078
 Consumable,File,Star,QGW-4318,2021-04-14 18:26:31.078
 Consumable,Pencil,Dollar,ABC-123,2021-04-14 18:26:31.078
